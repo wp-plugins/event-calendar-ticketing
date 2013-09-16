@@ -1,5 +1,5 @@
 
-Version 2.1 - September 16, 2013
+Version 2.1 - November 15, 2012
 
 	- Initial public release
 
