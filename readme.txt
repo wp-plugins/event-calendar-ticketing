@@ -226,7 +226,20 @@ Place your language files in the wp-content/languages subdirectory.
 == Changelog ==
 
 = 2.1 =
+
 * Initial public release
+
+= 2.0 =
+
+* Added new features
+
+* Prepared integration with WooEvents Pro
+
+* Put into private use
+
+= 1.0 =
+
+* Initial code development
 
 == Upgrade Notice ==
 
