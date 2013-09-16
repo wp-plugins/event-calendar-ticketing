@@ -27,7 +27,7 @@ We stand behind every product we make. So if you need help then [contact us dire
 
 Whether you're a one-person operation occassionally listing events, or an organization holding thousands of events, we've got you covered. Publish your events in a basic fashion with a title, description, pictures, and maybe some video. Or, create venues, organizers, speakers, and sponsors, and easily add those to your events for complete information. 
 
-Event Calendar & Ticketing is as easy to use as creating a any kind of new post in WordPress. It's really that simple. 
+Event Calendar & Ticketing is as easy to use as creating any kind of new post or page in WordPress. It's really that simple. 
 
 **Customizable**
 
