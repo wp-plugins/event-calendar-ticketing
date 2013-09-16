@@ -99,7 +99,7 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 
 * Allow buyers to **print their own tickets**, complete with **QR Codes**. The QR codes link directly to the customer's order page in the WordPress admin area or a mini check-in interface, so you can quickly get your guests checked in at the door.
 
-* Allow backorders to create "waiting lists" 
+* **Allow backorders** to create "**waiting lists**" 
 
 * Add **custom forms** to event sales pages using our easy form generator. Use this super powerful feature to collect additional information or provide upsells or addons. For example, **sell shwag** to an event so buyers can order the t-shirt etc at the same time they purchase tickets. Custom form fields can be single line text, multi-line text, radio buttons, checkboxes, dropdown list, or a file upload field, and each field can have an optional price assigned to it so that if a buyer selects something in the form with a price, that cost is added to the price of the ticket purchase during checkout. 
 
