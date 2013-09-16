@@ -119,9 +119,7 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 
 * **Works with any theme** that fully supports WooCommerce
 
-* Fully translatable
-
-* *WooEvents Pro comes with our **5-star priority support via email and phone***
+* **Fully translatable** into your language of choice
 
 **More Addons**
 
