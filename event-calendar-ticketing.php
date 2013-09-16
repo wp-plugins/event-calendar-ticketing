@@ -86,11 +86,10 @@ class IgniteWoo_Events {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'ignitewoo_events' );
 
 		// Allow upgrade safe, site specific language files in /wp-content/languages/woocommerce-subscriptions/
-		load_textdomain( 'ignitewoo_events', WP_LANG_DIR.'/woocommerce/ignitewoo_events-'.$locale.'.mo' );
+		load_textdomain( 'ignitewoo_events', WP_LANG_DIR . '/ignitewoo_events-'.$locale.'.mo' );
 
 		$plugin_rel_path = apply_filters( 'ignitewoo_translation_file_rel_path', dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
-		// Then check for a language file in /wp-content/plugins/woocommerce-subscriptions/languages/ (this will be overriden by any file already loaded)
 		load_plugin_textdomain( 'ignitewoo_events', false, $plugin_rel_path );
 
 	}

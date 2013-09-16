@@ -1,4 +1,3 @@
-
 === Event Calendar & Ticketing  ===
 Contributors: IGNITEWOO
 Donate link: http://ignitewoo.com
@@ -145,6 +144,8 @@ Then modify the CSS to suit your needs.
 = What is the text domain for translators? =
 
 The text domain is "ignitewoo_events" 
+
+Place your language files in the wp-content language directory. 
 
 == Screenshots ==
 
