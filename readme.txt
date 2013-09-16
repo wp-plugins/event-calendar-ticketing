@@ -1,5 +1,5 @@
 === Event Calendar & Ticketing  ===
-Contributors: IGNITEWOO
+Contributors: ignitewoo
 Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
