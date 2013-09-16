@@ -347,7 +347,7 @@ class IgniteWoo_Events_Taxonomies {
 		global $typenow; 
 		
 		if ( 'ignitewoo_event' != $typenow ) 
-			return $columns;
+			return $column_name;
 			
 		switch( $column_name ) { 
 		
