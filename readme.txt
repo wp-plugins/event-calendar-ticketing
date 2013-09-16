@@ -201,6 +201,8 @@ Then modify the CSS to suit your needs.
 
 The text domain is "ignitewoo_events" 
 
+The file name should be ignitewoo_events-en_US.mo where en_US is your langauge indicator.
+
 Place your language files in the wp-content language directory. 
 
 == Screenshots ==
