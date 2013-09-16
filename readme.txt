@@ -77,7 +77,7 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 
 *With WooEvents Pro:*
 
-* Sell tickets using over 100 different payment gateways - any gateway supported by WooCommerce works with WooEvents Pro.
+* Sell tickets using **over 100 different payment gateways** - any gateway supported by WooCommerce works with WooEvents Pro.
 
 * Create **recurring events** on daily, weekly, monthly, or custom schedules
 
