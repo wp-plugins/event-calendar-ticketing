@@ -191,7 +191,7 @@ Copy the file templates/ignitewoo-event-details-template.php into your theme dir
 
 Then modify the template to suit your needs. You won't lose your changes when you upgrade the plugin. Note that this template file is also used by our WooEvents Pro ticketing plugin, if you have that installed. So if you currently sell tickets, or might do so in the future, be careful to take that into consideration when modifying the template. 
 
-= How do I customize the calendar CSSm, widget CSS, and other event CSS? = 
+= How do I customize the calendar CSS, widget CSS, and other event CSS? = 
 
 Copy /assets/css/ignitewoo_events.css into your theme directory into a subdirectory called "ignitewoo_events". Example: Copy /assets/css/ignitewoo_events.css to wp-content/themes/YOUR-THEME-DIR/ignitewoo_events/ignitewoo_events.css. AND copy  /assets/css/widgets.css to wp-content/themes/YOUR-THEME-DIR/ignitewoo_events/widgets.css
 
