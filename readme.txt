@@ -15,7 +15,7 @@ A full-featured super-powerful event calendar solution for everyone. Go pro and 
 
 The Event Calendar & Ticketing plugin is a rock solid event calendar that easily integrates into your site. Developed and supported by IgniteWoo, this powerful plugin lets you publish your events quick and easy, and you can optionally include venues, organizers, speakers, sponsors, and Google Maps right out of the box. 
 
-Want to sell tickets too? No problem. Our [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Tickets Plugin - WooEvents ") plugin directly integrates with WooCommerce and turns Events Calendar & Ticketing into an ultra powerful ticket sales system, supporting over different 100 payment gateways. 
+Want to sell tickets too? No problem. Our [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Tickets Plugin - WooEvents ") plugin directly integrates with WooCommerce and turns Events Calendar & Ticketing into an ultra powerful ticket sales system, supporting over 100 different payment gateways. 
 
 **Solid Architecture & Fully Supported**
 
