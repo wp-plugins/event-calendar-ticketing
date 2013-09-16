@@ -77,13 +77,15 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 
 *With WooEvents Pro:*
 
+* **5-star priority support via email and phone***
+
 * Sell tickets using **over 100 different payment gateways** - any gateway supported by WooCommerce works with WooEvents Pro.
 
 * Create **recurring events** on daily, weekly, monthly, or custom schedules
 
-* Integrate **Google Calendar** export support
+* Integrated **Google Calendar** export support
 
-* Integrate **iCal export support**
+* Integrated **iCal export support**
 
 * Includes a **mini-calendar widget**
 
@@ -117,21 +119,19 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 
 **More Addons**
 
-* Use our **Loyalty Rewards** and Post-Purchase Follow-up plugins to give your buyers added incentive to come back and buy again
+* Use our **Loyalty Rewards** and **Post-Purchase Follow-up** plugins to give your buyers added incentive to come back and buy again
 
-* Use our **Scheduled Sales** plugin to drive anticipation and automate ticket availability
+* Use our **Scheduled Sales** plugin to drive anticipation and automate ticket availability, ticket prices, and more
 
-* Use our **Wholesale Pricing** plugin to allow select buyers to purchase at wholesale rates
+* Use our **Wholesale Pricing** plugin to allow select buyers to purchase at bulk rates
 
 * Sell tickets using any payment gateway for WooCommerce, including our **PayPal Payments Advanced**, **PayPal PayFlow Pro**, or **WePay** extensions
 
-* Use our **Gift Certificates Pro** add-on to sell gift certificates, which recipients can then use to come buy tickets to your events
+* Use our **Gift Certificates Pro** add-on to sell gift certificates for ticket purchases
 
 * We publish dozens of [add-ons for WooCommerce](http://ignitewoo.com " WooCommerce Plugins ") - and nearly all of them could be used with WooEvents Pro
 
-Have a close look at [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Event Tickets Plugin - WooEvents ") now. There's nothing else like it. And while you're at it check out our other add-ons for WooCommerce. 
-
-*WooEvents Pro comes with our **5-star priority support via email and phone***
+Have a close look at [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Event Tickets Plugin - WooEvents ") now. **There's nothing else like it.** And while you're at it check out our other add-ons for WooCommerce. 
 
 *IgniteWoo™ and WooEvents™ are trademarks of IgniteWoo, LLC. All Rights Reserved.*
 
