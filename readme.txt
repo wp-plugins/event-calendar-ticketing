@@ -207,19 +207,19 @@ Place your language files in the wp-content/languages subdirectory.
 
 == Screenshots ==
 
-1. Settings for an individual event
+1. Settings for an individual event. You can add start and end dates, add venues, organizers, sponsors, and speaker, opt to display a Google map, and optionally set an event price too.
 
-2. Full size calendar in a page
+2. Full size calendar in a page, in month view mode
 
-3. Upcoming events widget in a sidebar
+3. Upcoming events widget in a sidebar. It displays the title, start and end dates, price, and thumbnail of the featured image
 
 4. Editing a speaker. Note that editing venues, organizers, and sponsors is similar
 
 5. Extensive settings to help you control import aspects of your event system
 
-6. Event page example
+6. Event listing page example, with complete event details
 
-7. Event listings - admin page example
+7. Event listings in the WordPress admin area
 
 
 
