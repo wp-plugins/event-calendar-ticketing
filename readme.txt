@@ -73,7 +73,7 @@ Sell tickets, or not. Your choice. Either way, you gain the ability to create co
 
 If you opt to sell tickets then you gain a world of functionality. WooEvents Pro is quite possibly the best solution available today. It integrates *directly* with the free WooCommerce plugin, which means you easily gain a super powerful ticket selling platform capable of taking payment with over 100 different payment gateways.
 
-All your ticketed events are fully configurable products in WooCommerce. No shims, no hacks, just straight up deep integration with WooCommerce. 
+All your ticketed events are fully configurable products in WooCommerce. No shims, no hacks, just straight up deep direct integration with WooCommerce. 
 
 **With WooEvents Pro:**
 
@@ -99,6 +99,8 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 
 * Allow buyers to **print their own tickets**, complete with **QR Codes**. The QR codes link directly to the customer's order page in the WordPress admin area or a mini check-in interface, so you can quickly get your guests checked in at the door.
 
+* Allow backorders to create "waiting lists" 
+
 * Add **custom forms** to event sales pages using our easy form generator. Use this super powerful feature to collect additional information or provide upsells or addons. For example, **sell shwag** to an event so buyers can order the t-shirt etc at the same time they purchase tickets. Custom form fields can be single line text, multi-line text, radio buttons, checkboxes, dropdown list, or a file upload field, and each field can have an optional price assigned to it so that if a buyer selects something in the form with a price, that cost is added to the price of the ticket purchase during checkout. 
 
 * Offer **ticket discount coupon codes**. Easily use the coupon features of WooCommerce to generate any number of coupons or discounts for an event
@@ -114,6 +116,10 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 * Don't want to sell tickets for a particular event? No problem, just publish the event in WooCommerce with an empty price. The event instantly becomes a full event listing with no purchase options.  
 
 * Use some of the many, **many add-ons** for WooCommerce to enhance your event attendance and/or ticket sales.
+
+* **Works with any theme** that fully supports WooCommerce
+
+* Fully translatable
 
 * *WooEvents Pro comes with our **5-star priority support via email and phone***
 
