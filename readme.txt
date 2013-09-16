@@ -75,9 +75,9 @@ If you opt to sell tickets then you gain a world of functionality. WooEvents Pro
 
 All your ticketed events are fully configurable products in WooCommerce. No shims, no hacks, just straight up deep integration with WooCommerce. 
 
-*With WooEvents Pro:*
+**With WooEvents Pro:**
 
-* **5-star priority support via email and phone** *
+* **5-star priority support via email and phone**
 
 * Sell tickets using **over 100 different payment gateways** - any gateway supported by WooCommerce works with WooEvents Pro.
 
