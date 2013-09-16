@@ -203,7 +203,7 @@ The text domain is "ignitewoo_events"
 
 The file name should be ignitewoo_events-en_US.mo where en_US is your langauge indicator.
 
-Place your language files in the wp-content language directory. 
+Place your language files in the wp-content/languages subdirectory. 
 
 == Screenshots ==
 
