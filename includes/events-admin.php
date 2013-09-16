@@ -341,11 +341,12 @@ class IgniteWoo_Events_Admin {
 
 
 	function admin_head() { 
+		global $ignitewoo_events;
 		?>
 
 		<style>
 			#woocommerce-product-data ul.product_data_tabs li.ignitewoo_event_options a {
-				background: url("<?php echo $this->plugin_url ?>assets/images/wc-tab-icons.png") no-repeat scroll 9px -55px #F1F1F1;
+				background: url("<?php echo $ignitewoo_events->plugin_url ?>assets/images/wc-tab-icons.png") no-repeat scroll 9px -55px #F1F1F1;
 				color: #21759B;
 				line-height: 16px;
 				padding: 9px 9px 9px 34px;
