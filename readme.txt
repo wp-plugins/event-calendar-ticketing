@@ -21,29 +21,29 @@ Want to sell tickets too? No problem. Our [WooEvents Pro](http://ignitewoo.com/w
 
 **Solid Architecture & Fully Supported**
 
-Our code development adheres to the WordPress standards for coding style and quality.  
+Our code development adheres to the WordPress standards for coding style and quality. Our events calendar solution stands among the best of the best. 
 
-We stand behind every product we make. So if you need help then [contact us directly](http://ignitewoo.com/contact-us/ " Contact IgniteWoo ") for the fastest response. We strive to respond the same day whenever possible.
+And we stand behind every product we make. So if you need help then [contact us directly](http://ignitewoo.com/contact-us/ " Contact IgniteWoo ") for the fastest response. We strive to respond the same day whenever possible.
 
 **Flexible, Powerful, Easy to Use**
 
-Whether you're a one-person operation occassionally listing events, or an organization holding thousands of events, we've got you covered. Publish your events in a basic fashion with a title, description, pictures, and maybe some video. Or, create venues, organizers, speakers, and sponsors, and easily add those to your events for complete information. 
+Whether you're a one-person operation occassionally listing events, or an organization holding thousands of events, we've got you covered. Publish your events calendar in a basic fashion with a title, description, pictures, and maybe some video. Or, create venues, organizers, speakers, and sponsors, and easily add those to your events for complete information. 
 
 Event Calendar & Ticketing is as easy to use as creating any kind of new post or page in WordPress. It's really that simple. 
 
 **Customizable**
 
-Need a great base plugin to use for your next totally custom developed events system? Event Calendar & Ticketing is a great place to start. Our code is clean, easy to read, easy to follow, and easily modified to suit your needs. 
+Need a great base plugin to use for your next totally custom developed events calendar system? Event Calendar & Ticketing is a great place to start. Our code is clean, easy to read, easy to follow, and easily modified to suit your needs. 
 
-It's 100% architected around WordPress custom post types and taxonomies, and fully supports custom post type templates. No strange PHP code libraries and no proprietary data storage. If you're familiar with custom post types and post meta then then you'll be off to the races in no time flat. 
+It's 100% architected around WordPress custom post types and taxonomies, and fully supports custom post type templates. No strangely coded PHP code libraries and no proprietary data storage. If you're familiar with custom post types and post meta then then you'll be off to the races in no time flat. Go for it! 
 
 **Features:**
 
 * Publish any number of events on your site
 
-* Easily integrate a responsive calendar into any post or page on your site using a simple shortcode
+* Easily integrate a responsive events calendar into any post or page on your site using a simple shortcode
 
-* Easily manage event categories and tags
+* Easily manage event calendar categories and tags
 
 * Easily manage venues, organizers, speakers, and sponsors, including featured images, embedded videos, file attachments, bio, description, address, contact info, and more
 
@@ -55,7 +55,7 @@ It's 100% architected around WordPress custom post types and taxonomies, and ful
 
 * Customize the event details template HTML and CSS to fit your theme
 
-* Customize the calendar CSS to fit your theme
+* Customize the events calendar CSS to fit your theme
 
 * Includes microdata support for better SEO of your events
 
@@ -85,11 +85,11 @@ All your ticketed events are fully configurable products in WooCommerce. No shim
 
 * Create **recurring events** on daily, weekly, monthly, or custom schedules
 
-* Integrated **Google Calendar** export support
+* Integrated **Google Calendar** export support for your event calendar
 
-* Integrated **iCal export support**
+* Integrated **iCal export support** for you events calendar
 
-* Includes a **mini-calendar widget**
+* Includes a **mini-calendar widget** to display an events calendar anywhere you can place a widget
 
 * Establish per-buyer **ticket quantity purchase limits** to thwart ticket scalpers
 
@@ -211,13 +211,13 @@ Place your language files in the wp-content/languages subdirectory.
 
 1. Settings for an individual event. You can add start and end dates, add venues, organizers, sponsors, and speaker, opt to display a Google map, and optionally set an event price too.
 
-2. Full size calendar in a page, in month view mode
+2. Full size events calendar in a page, in month view mode
 
 3. Upcoming events widget in a sidebar. It displays the title, start and end dates, price, and thumbnail of the featured image
 
 4. Editing a speaker. Note that editing venues, organizers, and sponsors is similar
 
-5. Extensive settings to help you control import aspects of your event system
+5. Extensive settings to help you control import aspects of your events calendar system
 
 6. Event listing page example, with complete event details
 
