@@ -128,21 +128,21 @@ All your ticketed events are fully configurable products in WooCommerce.
 
 **More Addons**
 
-* Use our **Loyalty Rewards** and **Post-Purchase Follow-up** plugins to give your buyers added incentive to come back and buy again
+* Use our **[Loyalty Rewards](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-loyalty-rewards/ " WooCommerce Loyalty Rewards ")** and **[Post-purchase Followup]http://ignitewoo.com/woocommerce-extensions-plugins/post-purchase-follow-up-marketing/ " WooCommerce Followup Emails ")** plugins to give your buyers added incentive to come back and buy again
 
-* Use our **Scheduled Sales** plugin to drive anticipation and automate ticket availability, ticket prices, and more
+* Use our **[Scheduled Sales](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-scheduled-sales/ " WooCommerce Scheduled Sales ")** plugin to drive anticipation and automate ticket availability, ticket prices, and more
 
-* Use our **Wholesale Pricing** plugin to allow select buyers to purchase at bulk rates
+* Use our **[Wholesale Pricing](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-wholesale-pricing/ " WooCommerce Wholesale Pricing ")** plugin to allow select buyers to purchase at bulk rates
 
-* Sell tickets using any payment gateway for WooCommerce, including our **PayPal Payments Advanced**, **PayPal PayFlow Pro**, or **WePay** extensions
+* Sell tickets using any payment gateway for WooCommerce, including our **[PayPal Payflow Pro](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-paypal-payflow-pro/ " WooCommerce PayPal Payflow Pro ")**, **[PayPal Payments Advanced](http://ignitewoo.com/woocommerce-extensions-plugins/paypal-payments-advanced-for-woocommerce/ " WooCommerce PayPal Payments Advanced ")**, or **[WePay](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-wepay/ " WooCommerce WePay ")** extensions
 
-* Use our **Gift Certificates Pro** add-on to sell gift certificates for ticket purchases
+* Use our **[Gift Certificates Pro](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-gift-certificates-pro/ " WooCommerce Gift Certificates ")** add-on to sell gift certificates for ticket purchases
 
-* We publish dozens of [add-ons for WooCommerce](http://ignitewoo.com " WooCommerce Plugins ") - and nearly all of them could be used with WooEvents Pro
+* We publish dozens of [WooCommerce add-ons](http://ignitewoo.com " WooCommerce Plugins, WooCommerce Extensions, WooCommerce Add-ons ") - and nearly all of them could be used with WooEvents Pro
 
 Have a close look at [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Event Tickets Plugin - WooEvents ") now. 
 
-**WooEvents Pro - Nothing even comes close.** 
+***WooEvents Pro - Nothing else even comes close.***
 
 And while you're at it check out our other add-ons for WooCommerce. 
 
