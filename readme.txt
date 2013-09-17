@@ -95,17 +95,20 @@ All your ticketed events are fully configurable products in WooCommerce.
 
 * Establish per-buyer **ticket quantity purchase limits** to thwart ticket scalpers
 
-* Set up event **ticket variations** to sell specific seating, where each variation can have it's own stock quantity, regular price, and sale price. For example, set up an event that have 5 types of seating and sell each type in a different quantity and cost
+* Set up event **ticket variations** to sell specific seating, where each variation can have it's own stock quantity, regular price, and sale price. For example, set up an event that has 5 types of seating and sell each type in a different quantity and cost
 
-* Set up limited quantity **tickets at special prices**. Example, offer the first 10 ticket buyers a special discount on select seating by using ticket-related coupons or variation product quantities to limit availability
+* Set up limited quantity **tickets at special prices**. Example: Offer the first 10 ticket buyers a special discount on select seating by using ticket-related coupons or variation product quantities to limit availability
 
-* Schedule **large events and conferences** with multiple tracks, multiple sessions, multiple sponsors, and multiple speakers. Example: Easily create a multi-track event or conference where each track has 4 sessions and each session has 2 speakers - and optionally assign organizers and sponsors to those sessions, and/or the entire event or conference. Easily rearrange your complete event information with simple drag-and-drop functionality
+* Schedule **large events and conferences** with multiple sessions, multiple sponsors, and multiple speakers. Example: Easily create a multi-session event or conference where there might be many sessions and each session has 1 or more speakers - and optionally assign organizers and sponsors to those sessions, and/or the entire event or conference. Easily rearrange your complete event information with simple drag-and-drop functionality
 
 * Allow buyers to **print their own tickets**, complete with **QR Codes**. The QR codes link directly to the customer's order page in the WordPress admin area or a mini check-in interface, so you can quickly get your guests checked in at the door.
 
+
+* **Generate reports** of event attendees and related data to quickly get a view of who you're expecting to attend. Sort your report by any field in the report. Plus, you can print your reports or export them to CSV/Excel or PDF files.
+
 * **Allow backorders** to create "**waiting lists**" 
 
-* Add **custom forms** to event sales pages using our easy form generator. Use this super powerful feature to collect additional information or provide upsells or addons. For example, **sell shwag** to an event so buyers can order the t-shirt etc at the same time they purchase tickets. Custom form fields can be single line text, multi-line text, radio buttons, checkboxes, dropdown list, or a file upload field, and each field can have an optional price assigned to it so that if a buyer selects something in the form with a price, that cost is added to the price of the ticket purchase during checkout. 
+* Add **custom forms** to event sales pages using our easy form generator. Use this super powerful feature to **collect additional information or provide upsells or addons**. For example, **sell shwag** to an event so buyers can order the t-shirt etc at the same time they purchase tickets. Custom form fields can be single line text, multi-line text, radio buttons, checkboxes, dropdown list, or a file upload field, and each field can have an optional price assigned to it so that if a buyer selects something in the form with a price the cost is added to the price of the ticket purchase during checkout. 
 
 * Offer **ticket discount coupon codes**. Easily use the coupon features of WooCommerce to generate any number of coupons or discounts for an event
 
@@ -114,8 +117,6 @@ All your ticketed events are fully configurable products in WooCommerce.
 * Optionally manage regular non-ticket events and ticket-related events separately.
 
 * Optionally display individual calendars for non-ticket events or ticket-related, or display a calendar with both types of events combined. 
-
-* **Generate reports** of event attendees and related data to quickly get a view of who you're expecting to attend. Sort your report by any field in the report. Plus, you can print your reports or export them to CSV/Excel or PDF files
 
 * Don't want to sell tickets for a particular event? No problem, just publish the event in WooCommerce with an empty price. The event instantly becomes a full event listing with no purchase options.  
 
@@ -139,7 +140,11 @@ All your ticketed events are fully configurable products in WooCommerce.
 
 * We publish dozens of [add-ons for WooCommerce](http://ignitewoo.com " WooCommerce Plugins ") - and nearly all of them could be used with WooEvents Pro
 
-Have a close look at [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Event Tickets Plugin - WooEvents ") now. **There's nothing else like it.** And while you're at it check out our other add-ons for WooCommerce. 
+Have a close look at [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Event Tickets Plugin - WooEvents ") now. 
+
+**WooEvents Pro - Nothing even comes close.** 
+
+And while you're at it check out our other add-ons for WooCommerce. 
 
 *IgniteWoo™ and WooEvents™ are trademarks of IgniteWoo, LLC. All Rights Reserved.*
 
