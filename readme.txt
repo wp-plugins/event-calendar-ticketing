@@ -35,7 +35,7 @@ Event Calendar & Ticketing is as easy to use as creating any kind of new post or
 
 Need a great base plugin to use for your next totally custom developed events calendar system? Event Calendar & Ticketing is a great place to start. Our code is clean, easy to read, easy to follow, and easily modified to suit your needs. 
 
-It's 100% architected around WordPress custom post types and taxonomies, and fully supports custom post type templates. No strangely coded PHP code libraries and no proprietary data storage. If you're familiar with custom post types and post meta then then you'll be off to the races in no time flat. Go for it! 
+It's 100% architected around WordPress custom post types and taxonomies, and fully supports custom post type templates. No strangely coded PHP code libraries and no proprietary data storage. If you're familiar with custom post types and post meta data then you'll be off to the races in no time flat. Go for it! 
 
 **Features:**
 
