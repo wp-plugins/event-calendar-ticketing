@@ -128,7 +128,7 @@ All your ticketed events are fully configurable products in WooCommerce.
 
 **More Addons**
 
-* Use our **[Loyalty Rewards](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-loyalty-rewards/ " WooCommerce Loyalty Rewards ")** and **[Post-purchase Followup]http://ignitewoo.com/woocommerce-extensions-plugins/post-purchase-follow-up-marketing/ " WooCommerce Followup Emails ")** plugins to give your buyers added incentive to come back and buy again
+* Use our **[Loyalty Rewards](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-loyalty-rewards/ " WooCommerce Loyalty Rewards ")** and **[Post-purchase Followup](http://ignitewoo.com/woocommerce-extensions-plugins/post-purchase-follow-up-marketing/ " WooCommerce Followup Emails ")** plugins to give your buyers added incentive to come back and buy again
 
 * Use our **[Scheduled Sales](http://ignitewoo.com/woocommerce-extensions-plugins/woocommerce-scheduled-sales/ " WooCommerce Scheduled Sales ")** plugin to drive anticipation and automate ticket availability, ticket prices, and more
 
