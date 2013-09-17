@@ -200,6 +200,7 @@ if ( !defined('ABSPATH') )
 				<input <?php echo checked( $data['time_format'], 'H:i', false ) ?> class="small" type="radio" value="H:i" name="ignitewoo_event_settings[time_format]" > 23:00
 
 				<p class="description"><?php _e( 'This setting will be used when display times on the public site ( see <a href="http://www.php.net/manual/en/function.date.php" target="_blank">PHP date function</a> for formatting possibilities )', 'ignitewoo_events' )?></p>
+				
 				<p class="description"><?php _e( 'NOTE: Changing this setting will not update existing recurring event variation dates. You must edit the variation attributes manually.', 'ignitewoo_events' )?></p>
 
 			</td>

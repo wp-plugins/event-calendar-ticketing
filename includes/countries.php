@@ -294,8 +294,10 @@ class IgniteWoo_Event_Countries {
 
 	
 	public function get_states( $cc ) {
-		if ( isset( $this->states[$cc] ) ) 
-			return $this->states[$cc];
+	
+		if ( isset( $this->states[ $cc ] ) ) 
+			return $this->states[ $cc ];
+	
 	}
 	
 	
@@ -304,19 +306,21 @@ class IgniteWoo_Event_Countries {
 		if ( apply_filters('woocommerce_sort_countries', true ) )
 			asort( $this->countries );
 
-		if ( $this->countries ) foreach ( $this->countries as $key=>$value) :
+		if ( $this->countries ) 
+		foreach ( $this->countries as $key => $value ) :
 		
-			if ( $states =  $this->get_states($key) ) :
+			if ( $states =  $this->get_states( $key ) ) :
 			
-				echo '<optgroup label="'.$value.'">';
+				echo '<optgroup label="' . $value . '">';
 				
-    				foreach ($states as $state_key=>$state_value) :
+    				foreach ( $states as $state_key=>$state_value ) :
     				
     					echo '<option value="'.$key.':'.$state_key.'"';
 
-    					if ($selected_country==$key && $selected_state==$state_key) echo ' selected="selected"';
+    					if ( $selected_country == $key && $selected_state == $state_key ) 
+						echo ' selected="selected"';
 
-    					echo '>'.$value.' &mdash; '. ($escape ? esc_js($state_value) : $state_value) .'</option>';
+    					echo '>' . $value . ' &mdash; ' . ( $escape ? esc_js( $state_value ) : $state_value ) . '</option>';
     					
     				endforeach;
     				
@@ -324,8 +328,8 @@ class IgniteWoo_Event_Countries {
 			else :
 			
 				echo '<option';
-				if ($selected_country==$key && $selected_state=='*') echo ' selected="selected"';
-				echo ' value="'.$key.'">'. ($escape ? esc_js( $value ) : $value) .'</option>';
+				if ( $selected_country == $key && '*' == $selected_state ) echo ' selected="selected"';
+				echo ' value="' . $key . '">'. ( $escape ? esc_js( $value ) : $value ) . '</option>';
 				
 			endif;
 			

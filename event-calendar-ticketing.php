@@ -814,6 +814,7 @@ class IgniteWoo_Events {
 		if ( $file == $plugin_dir . 'event-calendar-ticketing.php' ) {
 
 			$links []= '<a href="http://ignitewoo.com/contact-us">' . __( 'Support', 'ignitewoo_events' ) . '</a>';
+			
 			$links []= '<a href="http://ignitewoo.com">' . __( 'View Add-ons / Upgrades' ) . '</a>';
 
 		}
@@ -824,6 +825,7 @@ class IgniteWoo_Events {
 
 
 register_activation_hook( __FILE__, 'ignitewoo_events_flush_rewrite_rules' );
+
 function ignitewoo_events_flush_rewrite_rules() { 
 	global $ignitewoo_events, $wp_rewrite;
 
@@ -879,10 +881,15 @@ function ign_event_date_to_iso( $date ) {
 	$tz = get_option('timezone_string');
 	
         if ( $tz ) {
+        
                 date_default_timezone_set( $tz );
+                
                 $datetime = date_create( $date );
+                
 		$datetime->setTimezone( new DateTimeZone('UTC') );
+		
 		$offset = $datetime->getOffset();
+		
 		return date('c', strtotime( $date ) );
 	
 	} else
