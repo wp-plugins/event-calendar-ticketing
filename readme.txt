@@ -21,9 +21,9 @@ Want to sell tickets too? No problem. Our [WooEvents Pro](http://ignitewoo.com/w
 
 **Solid Architecture & Fully Supported**
 
-Our code development adheres to the WordPress standards for coding style and quality. Our events calendar solution stands among the best of the best. 
+Our code development adheres to the WordPress standards for coding style and quality. Our events calendar solution is among the best of the best, backed up by our 10 years of WordPress development experience. 
 
-And we stand behind every product we make. So if you need help then [contact us directly](http://ignitewoo.com/contact-us/ " Contact IgniteWoo ") for the fastest response. We strive to respond the same day whenever possible.
+We stand behind every product we make. So if you need help then [contact us directly](http://ignitewoo.com/contact-us/ " Contact IgniteWoo ") for the fastest response. We strive to respond the same day whenever possible.
 
 **Flexible, Powerful, Easy to Use**
 
