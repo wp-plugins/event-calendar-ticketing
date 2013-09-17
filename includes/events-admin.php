@@ -1,5 +1,8 @@
 <?php
 
+if ( !defined('ABSPATH') )
+	die();
+	
 class IgniteWoo_Events_Admin { 
 
 	var $plugin_url = '';

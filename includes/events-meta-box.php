@@ -11,7 +11,6 @@ if ( !defined('ABSPATH') )
 
 	$event_info = $ignitewoo_events->get_post_data();
 	
-	
 	$event_info = wp_parse_args( $event_info, $event_defaults = array( 
 			'event_venue' => array(),
 			'event_primary_organizer' => array(),

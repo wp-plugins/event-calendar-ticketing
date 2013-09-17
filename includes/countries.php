@@ -1,5 +1,8 @@
 <?php
 
+if ( !defined('ABSPATH') )
+	die();
+	
 class IgniteWoo_Event_Countries {
 
 	var $countries;

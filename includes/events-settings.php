@@ -3,7 +3,6 @@
 Copyright (c) 2012 - IgniteWoo.com - ALL RIGHTS RESERVED 
 */ 
 
-
 if ( !defined('ABSPATH') )
 	die();
 

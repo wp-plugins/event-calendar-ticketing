@@ -1,4 +1,8 @@
 <?php 
+
+if ( !defined('ABSPATH') )
+	die();
+	
 	function gmap_footer() { 
 		global $post, $product, $ignitewoo_events;
 
