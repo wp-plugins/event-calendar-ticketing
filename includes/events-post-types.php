@@ -36,6 +36,9 @@ class IgniteWoo_Events_Taxonomies {
 
 		$this->settings = get_option( 'ignitewoo_events_main_settings', false );
 
+		if ( empty( $this->settings['events_slug'] ) )
+			$this->settings['events_slug'] = 'event';
+			
 		if ( empty( $this->settings['venue_slug'] ) )
 			$this->settings['venue_slug'] == 'event-venues';
 
@@ -208,15 +211,18 @@ class IgniteWoo_Events_Taxonomies {
 	
 		$base_slug = _x( $base_slug, 'slug', 'ignitewoo_events' );
 
+		if ( empty( $base_slug ) || !isset( $base_slug ) )
+			$base_slug = 'event';
+	
 		$category_base = trailingslashit( $base_slug );
 
 		$category_slug = _x( 'event-category', 'slug', 'ignitewoo_events' );
 
 		$tag_slug = _x( 'event-tag', 'slug', 'ignitewoo_events' );
 
-		$product_base = trailingslashit( $base_slug );
+		//$product_base = trailingslashit( $base_slug );
 
-		$admin_only_query_var = ( is_admin() ) ? true : false;
+		//$admin_only_query_var = ( is_admin() ) ? true : false;
 
 		register_post_type( "ignitewoo_event",
 			array(
@@ -251,7 +257,7 @@ class IgniteWoo_Events_Taxonomies {
 				'show_in_nav_menus' 	=> true
 			)
 		);
-		
+
 		register_taxonomy( 'event_cat',
 			'ignitewoo_event',
 			apply_filters( 'ignitewoo_event_cat_taxonomy_args', array(
@@ -273,7 +279,7 @@ class IgniteWoo_Events_Taxonomies {
 					'show_ui' => true,
 					'query_var' => true,
 					'rewrite' => array(
-						'slug' => 'event-category',
+						'slug' => $category_slug,
 						'with_front' => false,
 						'hierarchical' => true,
 						//'ep_mask' => EP_CATEGORIES
@@ -302,7 +308,7 @@ class IgniteWoo_Events_Taxonomies {
 					'show_ui' => true,
 					'query_var' => true,
 					'rewrite' => array(
-						'slug' => 'event-category',
+						'slug' => $tag_slug,
 						'with_front' => false,
 						'hierarchical' => true,
 						//'ep_mask' => EP_CATEGORIES

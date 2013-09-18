@@ -540,9 +540,9 @@ class IgniteWoo_Events_Admin {
 
 	function add_menu( $tabs = '' ) { 
 
-		add_menu_page( __( 'WooEvents', 'ignitewoo_events' ), __( 'WooEvents™', 'ignitewoo_events' ), 'manage_woocommerce', 'ignitewoo_events_settings', array( &$this, 'events_settings' ), null, 54 );
+		add_menu_page( __( 'WooEvents', 'ignitewoo_events' ), __( 'WooEvents™', 'ignitewoo_events' ), 'publish_posts', 'ignitewoo_events_settings', array( &$this, 'events_settings' ), null, 54 );
 
-		add_submenu_page( 'ignitewoo_events_settings', __( 'Settings', 'ignitewoo_events' ), __( 'Settings', 'ignitewoo_events' ), 'manage_woocommerce', 'ignitewoo_events_settings', array( &$this, 'events_settings' ) );
+		add_submenu_page( 'ignitewoo_events_settings', __( 'Settings', 'ignitewoo_events' ), __( 'Settings', 'ignitewoo_events' ), 'publish_posts', 'ignitewoo_events_settings', array( &$this, 'events_settings' ) );
 
 
 	}
