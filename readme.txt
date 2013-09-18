@@ -240,7 +240,6 @@ Place your language files in the wp-content/languages subdirectory.
 
 * Fixed menu access error that sometimes results in "You do not have permission to access this page" 
 
-
 = 2.2 = 
 
 * Fixed typo in variable name for post type columns
