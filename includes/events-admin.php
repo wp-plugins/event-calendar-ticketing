@@ -35,7 +35,7 @@ class IgniteWoo_Events_Admin {
 			if ( class_exists( 'IgniteWoo_Events_Pro' ) && ( 'tickets_only' == $ignitewoo_events->settings['events_posting'] || 'events_and_tickets' == $ignitewoo_events->settings['events_posting'] ) )
 				add_action( 'woocommerce_product_write_panels', array( &$this, 'event_data_panel' ), -1 );
 			
-			else if ( class_exists( 'IgniteWoo_Events_Pro' ) && ( 'events_only' == $ignitewoo_events->settings['events_posting'] || 'events_and_tickets' == $ignitewoo_events->settings['events_posting'] ) )
+			if ( 'events_only' == $ignitewoo_events->settings['events_posting'] || 'events_and_tickets' == $ignitewoo_events->settings['events_posting'] )
 				add_action( 'add_meta_boxes', array( &$this, 'meta_box' ), 1 );
 		} 
 		else 

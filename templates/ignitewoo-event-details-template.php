@@ -30,10 +30,8 @@ $main_settings = get_option( 'ignitewoo_events_main_settings', false );
 $date_format = empty( $main_settings['date_format'] ) ? 'M j, Y' : $main_settings['date_format'];
 $time_format = empty( $main_settings['time_format'] ) ? 'h:i a' : $main_settings['time_format'];
 
-if ( 'product' != $post->post_type ) 
-	$cost = get_post_meta( $post->ID, '_price', true );
-else
-	$cost = null;
+// Might return empty if this is a WooEvents Pro ticketed event
+$cost = get_event_cost();
 
 ?>
 
@@ -136,7 +134,8 @@ else
 					
 					<?php if ( !$expired && ( isset( $data['venue_google_calendar_link'] ) && 'yes' == $data['venue_google_calendar_link'] ) ) {
 
-						$gcal_link =  $ignitewoo_events_pro->gcal_link( $post->ID, $s, $end_date );
+						if ( method_exists( $ignitewoo_events_pro, 'gcal_link' ) )
+							$gcal_link =  $ignitewoo_events_pro->gcal_link( $post->ID, $s, $end_date );
 
 						if ( isset( $gcal_link ) && '' != $gcal_link ) { 
 							?>
@@ -151,7 +150,8 @@ else
 
 					<?php if ( !$expired && ( isset( $data['venue_ical_calendar_link'] ) && 'yes' == $data['venue_ical_calendar_link'] ) ) {
 
-						$ical_link =  $ignitewoo_events_pro->ical_link( $post->ID, $s, $end_date );
+						if ( method_exists( $ignitewoo_events_pro, 'ical_link' ) )
+							$ical_link =  $ignitewoo_events_pro->ical_link( $post->ID, $s, $end_date );
 
 						if ( isset( $ical_link ) && '' != $ical_link ) { 
 							?>
@@ -312,7 +312,7 @@ if ( $venues->have_posts() ) while ( $venues->have_posts() ) {
 
 
 
-<?php // ======= Organizer Details ======== ?>
+<?php // ======= Primary Event Organizer Details ======== ?>
 
 <?php 
 
@@ -610,9 +610,7 @@ if ( $primary_sponsors->have_posts() ) while ( $primary_sponsors->have_posts() )
 
 					<?php if ( isset( $session['speaker_data'] ) && !empty( $session['speaker_data'] ) && count( (array)$session['speaker_data'] ) > 0 ) { ?>
 
-						<?php if ( 'product' == $post->post_type ) { ?>
 						<p class="session_speaker_heading"><?php _e( 'Session Speakers', 'ignitewoo_events' ) ?></p>
-						<?php } ?>
 
 						<?php $offset = 0; ?>
 

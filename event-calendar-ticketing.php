@@ -4,7 +4,7 @@ Plugin Name: Event Calendar & Ticketing
 Plugin URI: http://ignitewoo.com
 Description: Full featured super-powered event calendar and ticketing management system. 
 Author: IgniteWoo.com
-Version: 2.2.1
+Version: 2.2.2
 Author URI: http://ignitewoo.com
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -60,6 +60,8 @@ class IgniteWoo_Events {
 		// Runs every page load for maximum accuracy in expiration detection - cron would not provide the same accuracy
 		add_action( 'init', array( &$this, 'maybe_unpublish_expired' ), 99999991 ); // DO NOT CHANGE PRIORITY - Depends on running AFTER CPTs are created
 		
+		add_action( 'wp', array( &$this, 'wp' ) );
+		
 		add_filter( 'the_posts', array( &$this, 'maybe_add_calendar_scripts_and_styles'  ), 1, 1 );
 
 		add_filter( 'the_content', array( &$this, 'the_content' ), 5, 1 );
@@ -92,6 +94,23 @@ class IgniteWoo_Events {
 
 		load_plugin_textdomain( 'ignitewoo_events', false, $plugin_rel_path );
 
+	}
+	
+	
+	function wp() { 
+		global $post;
+		
+		if ( !empty( $post->ID ) && 'yes' == get_post_meta( $post->ID, '_ignitewoo_event', true ) )
+				add_filter( 'body_class', array( &$this, 'event_class_names' ) );
+				
+	}
+	
+	
+	function event_class_names($classes) {
+
+		$classes[] = 'ignitewoo_event';
+		
+		return $classes;
 	}
 	
 	
@@ -322,7 +341,7 @@ class IgniteWoo_Events {
 
 		if ( class_exists( 'IgniteWoo_Events_Pro' ) && ( 'ignitewoo_event' != $post->post_type  && 'product' != $post->post_type ) ) { 
 
-				return $content;
+			return $content;
 		
 		} else if ( 'ignitewoo_event' != $post->post_type && 'product' != $post->post_type ) {
 		
@@ -344,32 +363,31 @@ class IgniteWoo_Events {
 		if ( isset( $data['event_venue'] ) )
 			$venues = $data['event_venue']; 
 		else
-			$venues = array();
+			$venues = array( 'xxx' );
 
 		//if ( isset( $venues ) && is_array( $venues ) )
 			$venues = new WP_Query( array( 'post_type' => 'event_venue', 'post_status' => 'publish', 'post__in' => $venues, 'posts_per_page' => 999999 ) );
 
 
-		if ( isset( $data['event_primary_organizer'] ) )
+		if ( !empty( $data['event_primary_organizer'] ) )
 			$primary_organizers = $data['event_primary_organizer'];
 		else
-			$primary_organizers = array();
+			$primary_organizers = array( 'xxx' );
 
 		//if ( isset( $primary_organizers ) && is_array( $primary_organizers ) && count( $primary_organizers ) > 0 )
 			$primary_organizers = new WP_Query( array( 'post_type' => 'event_organizer', 'post_status' => 'publish', 'post__in' => $primary_organizers, 'posts_per_page' => 999999 ) );
 
 
-
 		if ( isset( $data['event_primary_sponsor'] ) )
 			$primary_sponsors = $data['event_primary_sponsor'];
 		else
-			$primary_sponsors = array();
+			$primary_sponsors = array( 'xxx' );
 
 		//if ( isset( $primary_sponsors ) && is_array( $primary_sponsors ) && count( $primary_sponsors ) > 0 )
 			$primary_sponsors = new WP_Query( array( 'post_type' => 'event_sponsor', 'post_status' => 'publish', 'post__in' => $primary_sponsors, 'posts_per_page' => 999999 ) );
 
 
-		if ( $sessions && is_array( $sessions ) )
+		if ( class_exists( 'IgniteWoo_Events_Pro' ) && $sessions && is_array( $sessions ) )
 			for( $i = 0, $b = count( $sessions ); $i < $b; $i++ ) {
 				
 				if ( isset( $sessions[$i]['speaker'] ) && is_array( $sessions[$i]['speaker'] ) && count( $sessions[$i]['speaker'] ) > 0 ) { 
@@ -408,7 +426,8 @@ class IgniteWoo_Events {
 
 			}
 
-		if ( 'ignitewoo_event' == $post->post_type ) { 
+		
+		if ( !class_exists( 'IgniteWoo_Events_Pro' ) && 'ignitewoo_event' == $post->post_type ) { 
 		
 			$speakers = get_post_meta( $post->ID, '_speakers', true );
 
@@ -872,27 +891,8 @@ function event_calendar_ticketing_init() {
 
 		$ignitewoo_events->taxonomies = new IgniteWoo_Events_Taxonomies();
 	}
-
-}
-
-// For use with Schema.org  data
-function ign_event_date_to_iso( $date ) {
-
-	$tz = get_option('timezone_string');
 	
-        if ( $tz ) {
-        
-                date_default_timezone_set( $tz );
-                
-                $datetime = date_create( $date );
-                
-		$datetime->setTimezone( new DateTimeZone('UTC') );
-		
-		$offset = $datetime->getOffset();
-		
-		return date('c', strtotime( $date ) );
-	
-	} else
-		return date('c', strtotime( $s ) ) . 'Z';
+	if ( !is_admin() )
+		require_once( dirname( __FILE__ ) . '/includes/events-template-tags.php'  );
 
 }
