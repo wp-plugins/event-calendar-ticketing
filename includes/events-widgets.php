@@ -162,6 +162,14 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 										echo '<p>';
 
 									echo date( $settings['date_format'] . ' ' . $settings['time_format'] , @strtotime( $s ) );
+									
+									if ( empty( $duration ) ) { 
+									
+										$duration = 0;
+										
+										$s = get_post_meta( $post->ID, '_ignitewoo_event_end', true );
+										
+									}
 
 									echo '<br/>' . date( $settings['date_format'] . ' ' . $settings['time_format'] , strtotime( $s ) + $duration );
 
