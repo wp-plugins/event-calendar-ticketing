@@ -4,7 +4,7 @@ Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
 Tested up to: 3.6
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -174,7 +174,7 @@ Same as a above, contact us directly
 
 = How do I embed a calendar using a shortcode? =
 
-Simple insert [events_calendar] into any post or page where you want to the calendar to appear.
+Simply insert [ignitewoo_events_calendar] into any post or page where you want to the calendar to appear.
 
 Alternatively, if you're using our WooEvents Pro plugin you can add parameters to the shortcode for displaying simple events, or ticket-related events, or both: 
 
@@ -233,6 +233,10 @@ Place your language files in the wp-content/languages subdirectory.
 
 
 == Changelog ==
+
+= 2.2.4 =
+
+* Fixed post object checking to avoid PHP warning messages
 
 = 2.2.3 = 
 

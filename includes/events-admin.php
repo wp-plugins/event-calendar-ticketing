@@ -492,7 +492,7 @@ class IgniteWoo_Events_Admin {
 
 			});
 
-			<?php if ( !empty( $post ) && 'ignitewoo_event' == $post->post_type || 'product' == $post->post_type ) { ?>
+			<?php if ( !empty( $post ) && isset( $post ) && 'ignitewoo_event' == $post->post_type || 'product' == $post->post_type ) { ?>
 
 				jQuery( ".recur_date").datepicker();
 
