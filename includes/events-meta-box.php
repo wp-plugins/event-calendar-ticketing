@@ -88,7 +88,20 @@ if ( !defined('ABSPATH') )
 
 </script>
 
-<input type="hidden" name="_ignitewoo_event" value="yes">
+<?php 
+
+global $typenow;
+
+if ( !empty( $typenow ) && 'product' != $typenow ) { 
+
+	?>
+
+	<input type="hidden" name="_ignitewoo_event" value="yes">
+
+	<?php 
+} 
+?>
+
 
 <div id="ignitewoo_events_wrap" class="options_group">
 
