@@ -4,7 +4,7 @@ Plugin Name: Event Calendar & Ticketing
 Plugin URI: http://ignitewoo.com
 Description: Full featured super-powered event calendar and ticketing management system. 
 Author: IgniteWoo.com
-Version: 2.2.6
+Version: 2.2.8
 Author URI: http://ignitewoo.com
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -339,6 +339,15 @@ class IgniteWoo_Events {
 	function the_content( $content ) { 
 		global $post;
 
+		if ( function_exists( 'woocommerce_get_page_id' ) ) { 
+		
+			$shop_page = woocommerce_get_page_id( 'shop' );
+			
+			if ( is_page( $shop_page ) )
+				return $content;
+
+		}
+		
 		if ( class_exists( 'IgniteWoo_Events_Pro' ) && ( 'ignitewoo_event' != $post->post_type  && 'product' != $post->post_type ) ) { 
 
 			return $content;
@@ -452,7 +461,7 @@ class IgniteWoo_Events {
 		else 
 			require_once( dirname( __FILE__ ) . '/templates/ignitewoo-event-details-template.php' );
 
-		return $content;
+		return do_shortcode( $content );
 
 	}
 
