@@ -13,7 +13,7 @@ A full-featured super-powerful event calendar solution for everyone. Go pro and 
 
 == Description ==
 
-*** Professionally Supported ***
+**You Found The Best**
 
 The Event Calendar & Ticketing plugin is a rock solid events calendar that easily integrates into your site. Developed and supported by the professional full-time developers at IgniteWoo, this powerful plugin lets you publish your events quick and easy, and you can optionally include venues, organizers, speakers, sponsors, and Google Maps right out of the box. 
 
