@@ -3,7 +3,7 @@ Contributors: ignitewoo
 Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
-Tested up to: 3.6
+Tested up to: 3.7.1
 Stable tag: 2.2.8
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
@@ -13,7 +13,7 @@ A full-featured super-powerful event calendar solution for everyone. Go pro and 
 
 == Description ==
 
-***Newly released on September 16, 2013!***
+*** Professionally Supported ***
 
 The Event Calendar & Ticketing plugin is a rock solid events calendar that easily integrates into your site. Developed and supported by the professional full-time developers at IgniteWoo, this powerful plugin lets you publish your events quick and easy, and you can optionally include venues, organizers, speakers, sponsors, and Google Maps right out of the box. 
 
