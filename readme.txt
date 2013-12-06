@@ -4,7 +4,7 @@ Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
 Tested up to: 3.7.1
-Stable tag: 2.2.8
+Stable tag: 2.2.9
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -17,7 +17,7 @@ A full-featured super-powerful event calendar solution for everyone. Go pro and 
 
 The Event Calendar & Ticketing plugin is a rock solid events calendar that easily integrates into your site. Developed and supported by the professional full-time developers at IgniteWoo, this powerful plugin lets you publish your events quick and easy, and you can optionally include venues, organizers, speakers, sponsors, and Google Maps right out of the box. 
 
-Want to sell tickets too? No problem. Our [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Tickets Plugin - WooEvents ") plugin directly integrates with WooCommerce and turns Events Calendar & Ticketing into an ultra powerful ticket sales system, supporting over 100 different payment gateways. 
+Want to sell tickets too? No problem. Our [WooEvents Pro](http://ignitewoo.com/woocommerce-extensions-plugins/wordpress-event-calendar-wooevents-pro-for-woocommerce/ " WooCommerce Tickets Plugin - WooEvents ") plugin directly integrates with WooCommerce and turns Events Calendar & Ticketing into an ultra powerful ticket sales system, supporting over 120 different payment gateways. 
 
 **Solid Architecture & Fully Supported**
 
@@ -233,6 +233,10 @@ Place your language files in the wp-content/languages subdirectory.
 
 
 == Changelog ==
+
+= 2.2.9 =
+
+* Added SSL detection to avoid browser warning messages
 
 = 2.2.8 =
 
