@@ -4,7 +4,7 @@ Plugin Name: Event Calendar & Ticketing
 Plugin URI: http://ignitewoo.com
 Description: Full featured super-powered event calendar and ticketing management system. 
 Author: IgniteWoo.com
-Version: 2.2.10
+Version: 2.2.11
 Author URI: http://ignitewoo.com
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -54,7 +54,7 @@ class IgniteWoo_Events {
 		$this->plugin_path = WP_PLUGIN_DIR . '/' . str_replace( basename( __FILE__ ), '' , plugin_basename( __FILE__ ) );
 
 		$this->settings = get_option( 'ignitewoo_events_main_settings', false ); 
-		
+
 		add_action( 'init', array( &$this, 'load_plugin_textdomain' ) );
 		
 		add_action( 'init', array( &$this, 'is_ssl' ) );
@@ -67,6 +67,8 @@ class IgniteWoo_Events {
 		add_filter( 'the_posts', array( &$this, 'maybe_add_calendar_scripts_and_styles'  ), 1, 1 );
 
 		add_filter( 'the_content', array( &$this, 'the_content' ), 5, 1 );
+		
+		add_shortcode( 'event_details', array( &$this, 'shortcode_processor' ), 5, 1 );
 
 		add_action( 'wp_ajax_ignitewoo_get_events', array( &$this, 'ignitewoo_get_events' ) );
 
@@ -346,9 +348,28 @@ class IgniteWoo_Events {
 	}
 	
 
+	function shortcode_processor( $attr = array() ) { 
+
+		ob_start();
+
+		$out = $this->gen_event_info( '', false );
+		
+		$out = ob_get_clean();
+		
+		return $out;
+
+	}
+	
+	
 	function the_content( $content ) { 
 		global $post;
 
+		if ( isset( $this->settings['use_shortcode'] ) && 'yes' == $this->settings['use_shortcode'] )
+			return $content;
+		
+		if ( !is_main_query() )
+			return $content;
+			
 		if ( function_exists( 'woocommerce_get_page_id' ) ) { 
 		
 			$shop_page = woocommerce_get_page_id( 'shop' );
@@ -357,7 +378,7 @@ class IgniteWoo_Events {
 				return $content;
 				
 			if ( is_product_category() || is_product_tag() )
-				return;
+				return $content;
 
 		}
 		
@@ -373,6 +394,15 @@ class IgniteWoo_Events {
 
 		if ( 'yes' != get_post_meta( $post->ID, '_ignitewoo_event', true ) )
 			return $content;
+			
+		
+		return $this->gen_event_info( $content );
+		
+	}
+	
+	
+	function gen_event_info( $content = null, $do_shortcode = true ) { 
+		global $post;
 
 		$data = $this->get_post_data();
 
@@ -380,7 +410,6 @@ class IgniteWoo_Events {
 
 		if ( !$data )
 			return $content;
-
 		
 		if ( isset( $data['event_venue'] ) )
 			$venues = $data['event_venue']; 
@@ -389,7 +418,6 @@ class IgniteWoo_Events {
 
 		//if ( isset( $venues ) && is_array( $venues ) )
 			$venues = new WP_Query( array( 'post_type' => 'event_venue', 'post_status' => 'publish', 'post__in' => $venues, 'posts_per_page' => 999999 ) );
-
 
 		if ( !empty( $data['event_primary_organizer'] ) )
 			$primary_organizers = $data['event_primary_organizer'];
@@ -474,6 +502,10 @@ class IgniteWoo_Events {
 		else 
 			require_once( dirname( __FILE__ ) . '/templates/ignitewoo-event-details-template.php' );
 
+		// False when we're using this function to retrieve content for shortcode processing
+		if ( !$do_shortcode ) 
+			return;
+			
 		return do_shortcode( $content );
 
 	}

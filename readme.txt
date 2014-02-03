@@ -4,7 +4,7 @@ Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
 Tested up to: 3.8
-Stable tag: 2.2.10
+Stable tag: 2.2.11
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -155,7 +155,7 @@ And while you're at it check out our other add-ons for WooCommerce.
 3. Go to WooEvents -> Settings to configure settings
 4. If you intend to include a venue, sponsor, organizer, and/or speaker with your events then visit the related submenu to add those items.
 5. Click the Events submenu and add a new event
-6. Add a title, content, and media like you would for a regular WordPress post or page
+6. Add a title, content, and media like you would for a regular WordPress post or page. Optionally use the [event_details] shortcode in the content to display the event details.
 7. Edit the event settings below the content box
 8. Publish the event
 9. You're done!
@@ -189,6 +189,10 @@ Display a calendar that only shows events with tickets
 Display a calendar with simple events and ticket-related events
 
 *[events_calendar type="both"]*
+
+= How do I embed the event details using a shortcode? =
+
+Use the shortcode *[event_details]*
 
 = Can you add a new feature for me? =
 
@@ -233,6 +237,14 @@ Place your language files in the wp-content/languages subdirectory.
 
 
 == Changelog ==
+
+= 2.2.11 =
+
+* Added new setting to enable shortcode processing for event details insertion.
+
+* Add new shortcode [event_details] to insert event details into the body of the event post
+
+* Updated event details template to support shortcode processing
 
 = 2.2.10 =
 

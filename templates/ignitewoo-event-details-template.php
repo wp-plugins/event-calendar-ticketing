@@ -39,7 +39,7 @@ $cost = get_event_cost();
 <div itemscope itemtype="http://schema.org/Event">
  
 	<?php // For Schema.org markup since we cannot intercept WP writing the title on the page, display hidden ?>
-	<span itemprop="name" style="display:none"><?php the_title() ?></span>..
+	<span itemprop="name" style="display:none"><?php the_title() ?></span>
  
 	<?php // ============ EVENT DATES ============== ?>
 
@@ -50,7 +50,8 @@ $cost = get_event_cost();
 			// Remove the plugin's own action hook otherwise an infinity loop will result. 
 			remove_action( 'the_content', array( $ignitewoo_events, 'the_content' ), 5, 1 );
 			
-			the_content(); 
+			if ( isset( $this->settings['use_shortcode'] ) && 'yes' != $this->settings['use_shortcode'] )
+				the_content(); 
 		?>
 		</span>
 		

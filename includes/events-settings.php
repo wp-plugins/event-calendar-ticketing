@@ -34,6 +34,9 @@ if ( !defined('ABSPATH') )
 
 	if ( empty( $data['organizer_slug'] ) )
 		$data['organizer_slug'] = 'event-organizers';
+		
+	if ( empty( $data['use_shortcode'] ) )
+		$data['use_shortcode'] = 'no';
 ?>
 
 	<style>
@@ -272,6 +275,16 @@ if ( !defined('ABSPATH') )
 			</td>
 		</tr>
 		
+		<tr>
+			<th style="width: 120px; vertical-align:top">
+				<h4 style="margin:0"><label><?php _e( 'Enable Content Shortcode', 'ignitewoo_events' ); ?></label></h4>
+			</th>
+			<td>
+				<input class="small" type="checkbox" value="yes" <?php checked( $data['use_shortcode'], 'yes', true ) ?>  name="ignitewoo_event_settings[use_shortcode]" >
+				<p class="description"><?php _e( 'Enable shortcode to insert event information. Shortcode is [event_details]', 'ignitewoo_events' )?></p>
+
+			</td>
+		</tr>
 		
 		<?php if ( !class_exists( 'Woocommerce' ) ) { ?>
 
