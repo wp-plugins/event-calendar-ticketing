@@ -349,10 +349,15 @@ class IgniteWoo_Events_Admin {
 
 		<style>
 			#woocommerce-product-data ul.product_data_tabs li.ignitewoo_event_options a {
+				<?php if ( version_compare( WOOCOMMERCE_VERSION, '2.1' ) < 0 ) { ?> 
 				background: url("<?php echo $ignitewoo_events->plugin_url ?>assets/images/wc-tab-icons.png") no-repeat scroll 9px -55px #F1F1F1;
+				padding: 9px 9px 9px 34px;
+				<?php } else { ?>
+				padding: 10px;
+				<?php } ?>
 				color: #21759B;
 				line-height: 16px;
-				padding: 9px 9px 9px 34px;
+				
 				text-shadow: 0 1px 1px #FFFFFF;
 			}
 			.ignitewoo_event_tab.ignitewoo_event_options.active a {
@@ -440,6 +445,11 @@ class IgniteWoo_Events_Admin {
 			img.tips {
 				padding: 5px 0 0 0;
 			}
+			<?php if ( version_compare( WOOCOMMERCE_VERSION, '2.1' ) >= 0 ) { ?> 
+			#ignitewoo_event_product_data label {
+				margin-left: 0px
+			}
+			<?php } ?>
 		</style>
 		<script>
 		jQuery( document ).ready( function( $ ) { 
