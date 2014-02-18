@@ -4,7 +4,7 @@ Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
 Tested up to: 3.8
-Stable tag: 2.2.12
+Stable tag: 2.2.13
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -190,6 +190,10 @@ Display a calendar with simple events and ticket-related events
 
 *[events_calendar type="both"]*
 
+WooEvents Pro ONLY: Display a calendar with ticket-related events from a specific product category, such as "Gold". Notice that the cat="gold" in the shortcode example below has lower case "gold" - this is the category slug. If you category name is "Gold Rings" then the slug would be "gold-rings". The cat parameter expects a single category slug. You can find the slugs by reviewing your product categories.
+
+*[events_calendar type="tickets" cat="gold"]*
+
 = How do I embed the event details using a shortcode? =
 
 Use the shortcode *[event_details]*
@@ -237,6 +241,10 @@ Place your language files in the wp-content/languages subdirectory.
 
 
 == Changelog ==
+
+= 2.2.13 =
+
+* Added new parameter for calendar shortcode. You can now specific categories using the slug.
 
 = 2.2.12 =
 

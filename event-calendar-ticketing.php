@@ -4,7 +4,7 @@ Plugin Name: Event Calendar & Ticketing
 Plugin URI: http://ignitewoo.com
 Description: Full featured super-powered event calendar and ticketing management system. 
 Author: IgniteWoo.com
-Version: 2.2.12
+Version: 2.2.13
 Author URI: http://ignitewoo.com
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -560,12 +560,13 @@ class IgniteWoo_Events {
 	function events_calendar( $attr = array() ) { 
 
 		extract( shortcode_atts( array(
-			'type' => 'both'
+			'type' => 'both',
+			'cat' => 'all'
 		), $attr ) );
 
 		ob_start();
 
-		$this->render_calendar( $type ); 
+		$this->render_calendar( $type, $cat ); 
 
 		$out = ob_get_contents();
 
@@ -630,6 +631,25 @@ class IgniteWoo_Events {
 			
 		if ( !empty( $_POST['type'] ) ) 
 			$type = $_POST['type'];
+		else 
+			$type = null;
+			
+		$join = '';
+		
+		$where = '';
+		
+		if ( ( !empty( $type ) && 'tickets' == $type ) && ( !empty( $_POST['cat'] ) && 'all' != $_POST['cat'] ) ) {
+
+			$join = "LEFT JOIN {$wpdb->term_relationships} AS rel ON posts.ID = rel.object_ID
+			LEFT JOIN {$wpdb->term_taxonomy} AS tax USING( term_taxonomy_id )
+			LEFT JOIN {$wpdb->terms} AS term USING( term_id )";
+
+			$cat = esc_attr( $_POST['cat'] );
+
+			$where = "AND tax.taxonomy = 'product_cat'
+			AND term.slug = '{$cat}'";
+		
+		}
 
 		if ( class_exists( 'IgniteWoo_Events_Pro' ) && 'tickets' == $type )
 			$types = 'AND ( post_type = "product" )';
@@ -640,17 +660,19 @@ class IgniteWoo_Events {
 
 		$sql = ' 
 			SELECT distinct ID, post_content, post_title, m1.meta_value as start_date, m2.meta_value as end_date, m3.meta_value as settings
-			FROM `' . $wpdb->posts . '` 
+			FROM `' . $wpdb->posts . '` posts 
 			left join `' . $wpdb->postmeta . '` m1 on ID = m1.post_id 
 			left join `' . $wpdb->postmeta . '` m2 on ID = m2.post_id 
 			left join `' . $wpdb->postmeta . '` m3 on ID = m3.post_id 
 			left join `' . $wpdb->postmeta . '` m4 on ID = m4.post_id 
+			'. $join . '
 			WHERE 
 			( m1.meta_key = "_ignitewoo_event_start" and m1.meta_value >= "' . $start . '" )
 			AND ( m2.meta_key = "_ignitewoo_event_end" and m2.meta_value != "" )
 			AND m3.meta_key = "_ignitewoo_event_info"
 			AND ( m4.meta_key = "_ignitewoo_event" and m4.meta_value = "yes" )
 			AND post_status = "publish" 
+			' . $where . '
 			' . $types . '
 			ORDER BY TIMESTAMP( m1.meta_value ) DESC
 		';
@@ -737,7 +759,7 @@ class IgniteWoo_Events {
 	}
 
 
-	function render_calendar( $type = '' ) { 
+	function render_calendar( $type = '', $cat = 'all' ) { 
 		global $wpdb;
 
 		$error_setting = @ini_get( 'display_errors' );
@@ -802,7 +824,8 @@ class IgniteWoo_Events {
 								// our hypothetical feed requires UNIX timestamps
 								start: Math.round( start.getTime() / 1000 ),
 								end: Math.round( end.getTime() / 1000 ),
-								type: "<?php echo $type ?>"
+								type: "<?php echo $type ?>",
+								cat: "<?php echo $cat ?>"
 								},
 						}).done( function( data ) {
 							    var events = [];
