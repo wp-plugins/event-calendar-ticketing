@@ -251,6 +251,9 @@ if ( $venues->have_posts() ) while ( $venues->have_posts() ) {
 											echo $x[1]. ', '; // state
 
 										echo $x[0];
+										
+										if ( !empty( $venue_meta['_generic_postalcode'][0] ) )
+											echo ' ' . $venue_meta['_generic_postalcode'][0];
 
 									}
 
@@ -359,6 +362,51 @@ if ( $primary_organizers->have_posts() ) while ( $primary_organizers->have_posts
 
 						<?php } ?>
 
+					<?php if ( '' != $primary_organizers_meta['_generic_address'][0] ) { ?>
+
+						<tr>
+							<td>
+								<span itemprop="streetAddress"><?php echo $primary_organizers_meta['_generic_address'][0] ?></span>
+							</td>
+						</tr>
+
+					<?php } ?>
+
+
+					<?php if ( '' != $primary_organizers_meta['_generic_city'][0] ) { ?>
+
+						<tr>
+							<td>
+	
+								<meta itemprop="addressLocality">
+									<?php 
+									echo $primary_organizers_meta['_generic_city'][0] . ', ';
+									?>
+								</meta>
+								
+								<meta itemprop="addressRegion">
+									<?php
+									if ( '' != $primary_organizers_meta['_generic_country_state'][0] ) { 
+
+										$x = explode( ':', $primary_organizers_meta['_generic_country_state'][0] );
+
+										if ( count( $x ) > 1 ) 
+											echo $x[1]. ', '; // state
+
+										echo $x[0];
+										
+										if ( !empty( $primary_organizers_meta['_generic_postalcode'][0] ) )
+											echo ' ' . $primary_organizers_meta['_generic_postalcode'][0];
+
+									}
+
+									?>
+								</meta>
+
+							</td>
+						</tr>
+
+					<?php } ?>
 
 						<?php if ( '' != $primary_organizers_meta['_generic_email'][0] ) { ?>
 
@@ -448,7 +496,51 @@ if ( $primary_sponsors->have_posts() ) while ( $primary_sponsors->have_posts() )
 
 					<?php } ?>
 
+					<?php if ( '' != $primary_sponsors_meta['_generic_address'][0] ) { ?>
 
+						<tr>
+							<td>
+								<span itemprop="streetAddress"><?php echo $primary_sponsors_meta['_generic_address'][0] ?></span>
+							</td>
+						</tr>
+
+					<?php } ?>
+
+
+					<?php if ( '' != $primary_sponsors_meta['_generic_city'][0] ) { ?>
+
+						<tr>
+							<td>
+	
+								<meta itemprop="addressLocality">
+									<?php 
+									echo $primary_sponsors_meta['_generic_city'][0] . ', ';
+									?>
+								</meta>
+								
+								<meta itemprop="addressRegion">
+									<?php
+									if ( '' != $primary_sponsors_meta['_generic_country_state'][0] ) { 
+
+										$x = explode( ':', $primary_sponsors_meta['_generic_country_state'][0] );
+
+										if ( count( $x ) > 1 ) 
+											echo $x[1]. ', '; // state
+
+										echo $x[0];
+										
+										if ( !empty( $primary_sponsors_meta['_generic_postalcode'][0] ) )
+											echo ' ' . $primary_sponsors_meta['_generic_postalcode'][0];
+
+									}
+
+									?>
+								</meta>
+
+							</td>
+						</tr>
+
+					<?php } ?>
 					<?php if ( '' != $primary_sponsors_meta['_generic_email'][0] ) { ?>
 
 						<?php 
