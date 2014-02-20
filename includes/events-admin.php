@@ -282,6 +282,8 @@ class IgniteWoo_Events_Admin {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
+		//if ( 'product' == $typenow ) 
+		//	return;
 
 		if ( !$post
 			&& !in_array( $typenow, array( 'ignitewoo_event', 'event_organizer', 'event_venue', 'event_speaker', 'event_sponsor' ) ) 
@@ -291,22 +293,25 @@ class IgniteWoo_Events_Admin {
 			return; 
 
 
-		//if ( 'ignitewoo_event' != $typenow || )
-		//	return;
+		$v = defined( WOOCOMMERCE_VERSION ) ? WOOCOMMERCE_VERSION : null;
 
-		wp_deregister_script( 'jquery-tiptip' );
+		if ( empty( $v ) || version_compare( $v, '2.1', '<' ) )
+			wp_deregister_script( 'jquery-tiptip' );
 		
-		wp_register_script( 'jquery-tiptip', $ignitewoo_events->plugin_url . '/assets/js/jquery-tiptip/jquery.tipTip.min.js', array( 'jquery' ) );
+		if ( empty( $v ) || version_compare( $v, '2.1', '<' ) )
+			wp_register_script( 'jquery-tiptip', $ignitewoo_events->plugin_url . '/assets/js/jquery-tiptip/jquery.tipTip.min.js', array( 'jquery' ) );
+
+		if ( empty( $v ) || version_compare( $v, '2.1', '<' ) )
+			wp_register_style( 'tiptip_css', $ignitewoo_events->plugin_url . '/assets/css/tiptip.css' );
+		
+		if ( empty( $v ) || version_compare( $v, '2.1', '<' ) )
+			wp_deregister_script( 'chosen' );
+		
+		if ( empty( $v ) || version_compare( $v, '2.1', '<' ) )
+			wp_register_script( 'chosen', $ignitewoo_events->plugin_url . '/assets/js/chosen/chosen.jquery'.$suffix.'.js', array('jquery' ), '1.0' );
 
 		wp_enqueue_script( 'jquery-tiptip' );	
-
-		wp_register_style( 'tiptip_css', $ignitewoo_events->plugin_url . '/assets/css/tiptip.css' );
-
 		wp_enqueue_style( 'tiptip_css' );
-		
-		wp_deregister_script( 'chosen' );
-		
-		wp_register_script( 'chosen', $ignitewoo_events->plugin_url . '/assets/js/chosen/chosen.jquery'.$suffix.'.js', array('jquery' ), '1.0' );
 
 		wp_enqueue_script( 'chosen' );
 
@@ -344,7 +349,9 @@ class IgniteWoo_Events_Admin {
 
 
 	function admin_head() { 
-		global $ignitewoo_events;
+		global $ignitewoo_events, $post;
+		
+
 		?>
 
 		<style>
