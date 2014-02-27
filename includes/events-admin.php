@@ -293,6 +293,7 @@ class IgniteWoo_Events_Admin {
 			return; 
 
 
+		/*
 		if ( !defined( WOOCOMMERCE_VERSION ) || version_compare( WOOCOMMERCE_VERSION, '2.1', '<' ) ) {
 			wp_deregister_script( 'jquery-tiptip' );
 		
@@ -305,7 +306,8 @@ class IgniteWoo_Events_Admin {
 			wp_register_script( 'chosen', $ignitewoo_events->plugin_url . '/assets/js/chosen/chosen.jquery'.$suffix.'.js', array('jquery' ), '1.0' );
 			
 		}
-
+		*/
+		
 		wp_enqueue_script( 'jquery-tiptip' );	
 		wp_enqueue_style( 'tiptip_css' );
 
