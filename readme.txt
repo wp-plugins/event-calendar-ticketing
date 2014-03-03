@@ -242,6 +242,12 @@ Place your language files in the wp-content/languages subdirectory.
 
 == Changelog ==
 
+= 2.2.19 =
+
+Strip out [event_details] shortcode when getting summary for event calendar
+
+Added functionality so that WooEvents Pro can allow admins to manually set dates with a recurrence schedule
+
 = 2.2.18 =
 
 Tweaked JS code to avoid loading on unnecessary admin pages

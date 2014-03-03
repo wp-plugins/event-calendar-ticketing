@@ -4,7 +4,7 @@ Plugin Name: Event Calendar & Ticketing
 Plugin URI: http://ignitewoo.com
 Description: Full featured super-powered event calendar and ticketing management system. 
 Author: IgniteWoo.com
-Version: 2.2.18
+Version: 2.2.19
 Author URI: http://ignitewoo.com
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -695,6 +695,14 @@ class IgniteWoo_Events {
 			if ( !$data )
 				continue;
 
+			$product = get_product( $p->ID );
+			
+			if ( !empty( $product ) ) { 
+			
+				$attrs = $product->get_attributes(); 
+				
+			}
+			
 			$duration = get_post_meta( $p->ID, '_ignitewoo_event_duration', true );
 
 			if ( class_exists( 'IgniteWoo_Events_Rules' ) && isset( $data['recurrence'] ) && 'None' != $data['recurrence']['type'] ) {
@@ -703,6 +711,52 @@ class IgniteWoo_Events {
 
 				$dto = date( IgniteWoo_Date_Series_Rules::DATE_FORMAT, strtotime( $p->start_date ) + $duration );
 
+			} else if ( !empty( $attrs ) && !empty( $attrs['date'] ) && !empty( $attrs['date']['value'] ) ) { 
+			
+				$dates = array_map( 'trim', explode( '|', $attrs['date']['value'] ) );
+				
+				foreach( $dates as $d ) { 
+					
+					$dfrom = strtotime( $d );
+					$dto = strtotime( $d );
+
+					$fm = date( 'm', $dfrom );
+					$fd = date( 'd', $dfrom );
+					$fy = date( 'Y', $dfrom );
+					$fh = date( 'H', $dfrom );
+					$fi = date( 'i', $dfrom );
+
+					// offset of bizarro JS 
+					$fm = $fm - 1;
+					if ( $fm < 0 ) $fm = 11;
+
+					$tm = date( 'm', $dto );
+					$td = date( 'd', $dto );
+					$ty = date( 'Y', $dto );
+					$th = date( 'H', $dto );
+					$ti = date( 'i', $dto );
+
+					// offset of bizarro JS 
+					$tm = $tm - 1;
+					if ( $tm < 0 ) $tm = 11;
+
+
+					$dfrom = date( 'Y-m-d H:i', $dfrom );
+					$dto = date( 'Y-m-d H:i', $dto );
+
+					$events[] = array( 
+							'start' => $dfrom,
+							'end' => $dto,
+							'title' => $p->post_title,
+							'description' => $this->ignitewoo_the_excerpt( str_replace( '[event_details]', '', $p->post_content ), 150 ),
+							'url' => get_permalink( $p->ID ),
+							'allDay' => false, // causes time to display on calendar
+						);
+				
+				
+				
+				}
+			
 			} else {
 
 				$dfrom = $p->start_date;
@@ -746,7 +800,7 @@ class IgniteWoo_Events {
 					'start' => $dfrom,
 					'end' => $dto,
 					'title' => $p->post_title,
-					'description' => $this->ignitewoo_the_excerpt( $p->post_content, 150 ),
+					'description' => $this->ignitewoo_the_excerpt( str_replace( '[event_details]', '', $p->post_content ), 150 ),
 					'url' => get_permalink( $p->ID ),
 					'allDay' => false, // causes time to display on calendar
 				);
