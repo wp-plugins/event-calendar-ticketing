@@ -456,6 +456,9 @@ class IgniteWoo_Events_Admin {
 			}
 			<?php } ?>
 		</style>
+		
+		<?php 
+			if ( !empty( $post->post_type ) && in_array( $post->post_type, array( 'event_organizer', 'event_venue', 'event_sponsor', 'event_speaker', 'ignitewoo_event' ) ) ) { ?>
 		<script>
 		jQuery( document ).ready( function( $ ) { 
 
@@ -472,6 +475,7 @@ class IgniteWoo_Events_Admin {
 
 		});
 		</script>
+		<?php } ?>
 		<?php
 	}
 
