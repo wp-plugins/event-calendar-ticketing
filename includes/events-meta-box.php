@@ -130,6 +130,11 @@ if ( !empty( $typenow ) && 'product' != $typenow ) {
 	<?php do_action( 'ignitewoo_events_pro_ticket_limits' ) ?>
 
 
+	<style>
+	#ignitewoo_single_session_wrap .chosen-container {
+		width: 200px !important;
+	}
+	</style>
 
 	<div style="border-bottom: 1px solid #DFDFDF;">
 
@@ -150,7 +155,7 @@ if ( !empty( $typenow ) && 'product' != $typenow ) {
 					<?php if ( !isset( $venues->posts ) || count( $venues->posts ) <= 0 ) { ?>
 						<?php _e( 'No venues exist. Before you can select a venue you must create and publish one', 'ignitewoo_events' ) ?>
 					<?php } else { ?>
-						<select class="chosen_select chosen" style="width: 250px" id="ignitewoo_event_venue_select" name="ignitewoo_event_info[event_venue][]">
+						<select class="chosen_select chosen" style="width: 250px !important" id="ignitewoo_event_venue_select" name="ignitewoo_event_info[event_venue][]">
 							<option value=""><?php _e( 'Select a venue', 'ignitewoo_events' )?></option>
 							<?php foreach ( $venues->posts as $p ) { ?>
 								<option <?php if ( in_array( $p->ID, $event_info['event_venue'] ) ) echo 'selected="selected"' ?> value="<?php echo $p->ID ?>"><?php echo get_the_title( $p->ID ) ?></option>
