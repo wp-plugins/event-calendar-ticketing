@@ -161,7 +161,7 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 									if ( $count > 1 && 'yes' == $show_all_recur ) 
 										echo '<p>';
 
-									echo date( $settings['date_format'] . ' ' . $settings['time_format'] , @strtotime( $s ) );
+									echo '<span class="start_date">' . date( $settings['date_format'] . ' ' . $settings['time_format'] , @strtotime( $s ) ) . '</span>';
 									
 									if ( empty( $duration ) ) { 
 									
@@ -171,7 +171,7 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 										
 									}
 
-									echo '<br/>' . date( $settings['date_format'] . ' ' . $settings['time_format'] , strtotime( $s ) + $duration );
+									echo '<br/><span class="end_date">' . date( $settings['date_format'] . ' ' . $settings['time_format'] , strtotime( $s ) + $duration ) . '</span>';
 
 									if ( $count > 1 && 'yes' == $show_all_recur ) 
 										echo '</p>';
