@@ -242,6 +242,10 @@ Place your language files in the wp-content/languages subdirectory.
 
 == Changelog ==
 
+= 2.2.24 = 
+
+Changed detection of WooCommerce to avoid JS conflicts
+
 = 2.2.23 =
 
 Load chosen and tipTip if WooCommerce is not enabled on the site
