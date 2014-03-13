@@ -308,7 +308,17 @@ class IgniteWoo_Events_Admin {
 		}
 		*/
 		
+		if ( !defined( WOOCOMMERCE_VERSION ) || version_compare( WOOCOMMERCE_VERSION, '2.1', '<' ) ) {
+		
+			wp_register_script( 'chosen', $ignitewoo_events->plugin_url . '/assets/js/chosen/chosen.jquery'.$suffix.'.js', array('jquery' ), '1.0' );
+			
+			wp_register_script( 'jquery-tiptip', $ignitewoo_events->plugin_url . '/assets/js/jquery-tiptip/jquery.tipTip.min.js', array( 'jquery' ) );
+
+			wp_register_style( 'tiptip_css', $ignitewoo_events->plugin_url . '/assets/css/tiptip.css' );
+		}
+		
 		wp_enqueue_script( 'jquery-tiptip' );	
+		
 		wp_enqueue_style( 'tiptip_css' );
 
 		wp_enqueue_script( 'chosen' );
