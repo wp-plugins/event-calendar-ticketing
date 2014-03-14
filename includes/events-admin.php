@@ -24,7 +24,7 @@ class IgniteWoo_Events_Admin {
 		// must be higher than the init that adds the post type otherwise permalinks are not updated
 		add_action( 'init', array( &$this, 'init' ), 99999995 ); 
 
-		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_scripts' ), -1 );
+		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_scripts' ), 999999 );
 
 		add_action( 'admin_head', array( &$this, 'admin_head' ), 99999999 );
 
@@ -308,9 +308,15 @@ class IgniteWoo_Events_Admin {
 		}
 		*/
 
-		if ( is_null( WOOCOMMERCE_VERSION ) || version_compare( WOOCOMMERCE_VERSION, '2.1', '<' ) ) {
+		if ( !wp_script_is( 'chosen', 'registered' ) ) {
 
 			wp_register_script( 'chosen', $ignitewoo_events->plugin_url . '/assets/js/chosen/chosen.jquery'.$suffix.'.js', array('jquery' ), '1.0' );
+			
+			wp_register_style( 'ig_chosen_css', $ignitewoo_events->plugin_url . '/assets/css/chosen.css' );
+			
+		}
+		
+		if ( !wp_script_is( 'jquery-tiptip', 'registered' ) ) {
 			
 			wp_register_script( 'jquery-tiptip', $ignitewoo_events->plugin_url . '/assets/js/jquery-tiptip/jquery.tipTip.min.js', array( 'jquery' ) );
 
@@ -322,8 +328,6 @@ class IgniteWoo_Events_Admin {
 		wp_enqueue_style( 'tiptip_css' );
 
 		wp_enqueue_script( 'chosen' );
-
-		wp_register_style( 'ig_chosen_css', $ignitewoo_events->plugin_url . '/assets/css/chosen.css' );
 
 		wp_enqueue_style( 'ig_chosen_css' );
 
