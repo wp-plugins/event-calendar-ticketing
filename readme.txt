@@ -3,8 +3,8 @@ Contributors: ignitewoo
 Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
-Tested up to: 3.8
-Stable tag: 2.2.26
+Tested up to: 3.8.1
+Stable tag: 2.2.27
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -241,6 +241,10 @@ Place your language files in the wp-content/languages subdirectory.
 
 
 == Changelog ==
+
+= 2.2.27 = 
+
+Modified widget SQL query to retrieve events whose end date has not been reached yet
 
 = 2.2.26 = 
 

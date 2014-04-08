@@ -72,13 +72,13 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 
 		$show_all_recur = $instance['show_all_recur'];
 
-		$sql = 'select p.ID, p.post_title, m2.meta_value from ' . $wpdb->posts . ' p ' . 
+		$sql = 'select p.ID, p.post_title, m2.meta_value  from ' . $wpdb->posts . ' p ' . 
 			' left join ' . $wpdb->postmeta . ' m1 on m1.post_id = ID ' . 
 			' left join ' . $wpdb->postmeta . ' m2 on m2.post_id = ID ' . 
 			' where post_status = "publish" AND ( post_type = "product" OR post_type = "ignitewoo_event" ) ' . 
 			' AND ( m1.meta_key = "_ignitewoo_event" AND m1.meta_value = "yes" ) ' . 
-			' AND ( m2.meta_key = "_ignitewoo_event_start" AND m2.meta_value >= "' . date( 'Y-m-d H:i:s', current_time( 'timestamp' ) ) . '" ) ' . 
-			' AND ( m2.meta_key = "_ignitewoo_event_start" AND m2.meta_value != "" ) ' . 
+			' AND ( m2.meta_key = "_ignitewoo_event_end" AND m2.meta_value >= "' . date( 'Y-m-d H:i:s', current_time( 'timestamp', false ) ) . '" ) ' . 
+			' AND ( m2.meta_key = "_ignitewoo_event_end" AND m2.meta_value != "" ) ' . 
 			' ORDER BY CAST( m2.meta_value as DATE ) ASC LIMIT ' . $number ;
 
 		$posts = $wpdb->get_results( $sql );
