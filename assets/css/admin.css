@@ -1,4 +1,8 @@
 
+#ignitewoo_events_wrap input[type="checkbox"], #ignitewoo_events_wrap input[type="radio"] { 
+	width: 15px;
+}
+
 #form_fields textarea.import,#form_fields textarea.export
 {
   width:100%;

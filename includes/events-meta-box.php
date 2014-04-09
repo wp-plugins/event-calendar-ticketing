@@ -168,12 +168,12 @@ if ( !empty( $typenow ) && 'product' != $typenow ) {
 
 				<p class="form-field">
 					<label><?php _e( 'Display Map', 'ignitewoo_events' ); ?></label>
-					<input style="float:none" tabindex="<?php $this->tab_index(); ?>" type='checkbox' name='ignitewoo_event_info[venue_map]' value='yes' <?php if ( isset( $event_info['venue_map'] ) && 'yes' == $event_info['venue_map'] ) echo 'checked="checked"'; ?> /> <?php _e( "Display a map to the venue on the event's page", 'ignitewoo_events' ) ?>
+					<input style="float:none; width:15px" tabindex="<?php $this->tab_index(); ?>" type='checkbox' name='ignitewoo_event_info[venue_map]' value='yes' <?php if ( isset( $event_info['venue_map'] ) && 'yes' == $event_info['venue_map'] ) echo 'checked="checked"'; ?> /> <?php _e( "Display a map to the venue on the event's page", 'ignitewoo_events' ) ?>
 				</p>
 
 				<p class="form-field">
 					<label><?php _e( 'Display Details', 'ignitewoo_events' ); ?></label>
-					<input style="float:none" tabindex="<?php $this->tab_index(); ?>" type='checkbox' name='ignitewoo_event_info[display_organizer]' value='yes' <?php if ( isset( $event_info['display_organizer'] ) && 'yes' == $event_info['display_organizer'] ) echo 'checked="checked"'; ?> /> <?php _e( "Display the event organizer's contact info on individual event pages", 'ignitewoo_events' ) ?>
+					<input style="float:none; width:15px" tabindex="<?php $this->tab_index(); ?>" type='checkbox' name='ignitewoo_event_info[display_organizer]' value='yes' <?php if ( isset( $event_info['display_organizer'] ) && 'yes' == $event_info['display_organizer'] ) echo 'checked="checked"'; ?> /> <?php _e( "Display the event organizer's contact info on individual event pages", 'ignitewoo_events' ) ?>
 				</p>
 
 				<?php do_action( 'ignitewoo_events_gcal_ical_map' ) ?>
