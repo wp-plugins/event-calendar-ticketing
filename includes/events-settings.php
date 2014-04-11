@@ -37,6 +37,9 @@ if ( !defined('ABSPATH') )
 		
 	if ( empty( $data['use_shortcode'] ) )
 		$data['use_shortcode'] = 'no';
+		
+	if ( empty( $data['remove_past_dates'] ) )
+		$data['remove_past_dates'] = 'no';
 ?>
 
 	<style>

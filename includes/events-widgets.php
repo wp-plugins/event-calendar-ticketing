@@ -92,7 +92,7 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 
 		if ( $posts ) { 
 
-			global $product; 
+			//global $product; 
 		?>
 
 			    <ul class="product_list_widget event_list_widget floated">
@@ -106,10 +106,14 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 
 					$price = '';
 					
-					if ( !empty( $product ) && function_exists( 'get_product' ) ) {
+					if ( empty( $product ) && function_exists( 'get_product' ) ) {
+					
 						$product = get_product( $post->ID );
-						$image = $product->get_image();
-						$price = $product->get_price_html();
+						
+						if ( method_exists( $product, 'get_price_html' ) ) { 
+							$image = $product->get_image();
+							$price = $product->get_price_html();
+						}
 					}
 
 					if ( !class_exists( 'Woocommerce' ) || empty( $product ) ) { 
@@ -132,24 +136,25 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 							</a>
 						</div>
 						<div class="events_upcoming_info">
-								<div class="event_title_wrap">
-								<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" title="<?php echo esc_attr($post->post_title ? $post->post_title : $post->ID); ?>">
-								
-								<?php
-									if ( $post->post_title ) 
-										echo get_the_title( $post->ID ); 
-									else 
-										echo $post->ID; 
-								?>
-								</a>
-								</div>
+							<div class="event_title_wrap">
+							<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" title="<?php echo esc_attr($post->post_title ? $post->post_title : $post->ID); ?>">
+							
+							<?php
+								if ( $post->post_title ) 
+									echo get_the_title( $post->ID ); 
+								else 
+									echo $post->ID; 
+							?>
+							</a>
+							</div>
+							
 							<?php 
 
-							if ( 'yes' == $show_all_recur ) 
+							//if ( 'yes' == $show_all_recur ) 
 								$start = get_post_meta( $post->ID, '_ignitewoo_event_start', false ); 
-							else
-								$start = (array)$post->meta_value;
-
+							//else
+								//$start = (array)$post->meta_value;
+//var_dump( $post->ID, get_post_meta( $post->ID, '_ignitewoo_event_start', false ) );
 							$duration = get_post_meta( $post->ID, '_ignitewoo_event_duration', true ); 
 
 							if ( isset( $start ) && !empty( $start ) ) {
@@ -195,6 +200,8 @@ class IgniteWoo_Widget_Upcoming_Events extends WP_Widget {
 						</div>
 						</div>
 					</li>
+					
+					<?php unset( $product ) ?>
 
 				<?php } ?>
 
