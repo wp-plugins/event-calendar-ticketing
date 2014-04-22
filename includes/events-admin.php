@@ -182,7 +182,7 @@ class IgniteWoo_Events_Admin {
 
 			$x = 0;
 
-			if ( count( $field_speaker_id[ $i ] ) > 0 ) 
+			if ( is_array( $field_speaker_id ) && count( $field_speaker_id[ $i ] ) > 0 ) 
 			foreach( $field_speaker_id[ $i ] as $key => $s_field ) { 
 
 				$new_speaker_post = array(
