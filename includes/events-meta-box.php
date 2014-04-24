@@ -161,7 +161,7 @@ if ( !empty( $typenow ) && 'product' != $typenow ) {
 								<option <?php if ( in_array( $p->ID, $event_info['event_venue'] ) ) echo 'selected="selected"' ?> value="<?php echo $p->ID ?>"><?php echo get_the_title( $p->ID ) ?></option>
 							<?php } ?>
 						</select>
-						<img class="help_tip" data-tip="<?php _e( ' Select the venue at which this event will take place ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>/assets/images/help.png" />
+						<img class="help_tip" data-tip="<?php _e( ' Select the venue at which this event will take place ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>../assets/images/help.png" />
 					<?php } ?>
 				</p>
 				
@@ -188,7 +188,7 @@ if ( !empty( $typenow ) && 'product' != $typenow ) {
 								<option <?php if ( in_array( $p->ID, $event_info['event_primary_organizer'] ) ) echo 'selected="selected"' ?> value="<?php echo $p->ID ?>"><?php echo get_the_title( $p->ID ) ?></option>
 							<?php } ?>
 						</select>
-						<img class="help_tip" data-tip="<?php _e( ' Optionally select organizers that are coordinating the entire event ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>/assets/images/help.png" />
+						<img class="help_tip" data-tip="<?php _e( ' Optionally select organizers that are coordinating the entire event ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>../assets/images/help.png" />
 					<?php } ?>
 				</p>
 
@@ -202,7 +202,7 @@ if ( !empty( $typenow ) && 'product' != $typenow ) {
 								<option <?php if ( in_array( $p->ID, $event_info['event_primary_sponsor'] ) ) echo 'selected="selected"' ?> value="<?php echo $p->ID ?>"><?php echo get_the_title( $p->ID ) ?></option>
 							<?php } ?>
 						</select>
-						<img class="help_tip" data-tip="<?php _e( ' Optionally select sponsors that are sponsoring the entire event ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>/assets/images/help.png" />
+						<img class="help_tip" data-tip="<?php _e( ' Optionally select sponsors that are sponsoring the entire event ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>../assets/images/help.png" />
 					<?php } ?>
 				</p>
 
@@ -220,7 +220,7 @@ if ( !empty( $typenow ) && 'product' != $typenow ) {
 									<option <?php if ( in_array( $p->ID, $event_info['session_speaker_id'] ) ) echo 'selected="selected"' ?> value="<?php echo $p->ID ?>"><?php echo get_the_title( $p->ID ) ?></option>
 								<?php } ?>
 							</select>
-							<img class="help_tip" data-tip="<?php _e( ' Optionally select speakers for the event ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>/assets/images/help.png" />
+							<img class="help_tip" data-tip="<?php _e( ' Optionally select speakers for the event ', 'ignitewoo_events' ) ?>" src="<?php echo $this->plugin_url ?>../assets/images/help.png" />
 						<?php } ?>
 					</p>
 				<?php } ?>

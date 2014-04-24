@@ -282,8 +282,8 @@ class IgniteWoo_Events_Admin {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		//if ( 'product' == $typenow ) 
-		//	return;
+		if ( 'product' != $typenow && 'ignitewoo_event' != $typenow ) 
+			return;
 
 		if ( !$post
 			&& !in_array( $typenow, array( 'ignitewoo_event', 'event_organizer', 'event_venue', 'event_speaker', 'event_sponsor' ) ) 
