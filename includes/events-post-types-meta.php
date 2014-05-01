@@ -87,7 +87,7 @@ class IgniteWoo_Events_Taxonomy_Meta {
 						if ( count( $c_data ) > 1 ) 
 							$state = $c_data[1];
 
-						if ( isset( $state ) && '' == $state )
+						if ( ( isset( $state ) && '' == $state ) || empty( $state ) )
 							$state = '*';
 
 				    ?>
