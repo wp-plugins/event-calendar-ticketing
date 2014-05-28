@@ -3,8 +3,8 @@ Contributors: ignitewoo
 Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
-Tested up to: 3.9
-Stable tag: 2.2.33
+Tested up to: 3.9.1
+Stable tag: 2.2.34
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -165,7 +165,7 @@ And while you're at it check out our other add-ons for WooCommerce.
 
 = How do I get support? =
 
-For support either contact us directly via the Contact form on [IgniteWoo.com](http://ignitewoo.com/ " WooCommerce plugins and custom development "), or post your question in the WordPress support forums. Contacting us directly gets you a faster response. Note that we do publish a support phone number on our Web site, however *phone support is only available for our paid plugins.*
+For support contact us directly via the Contact form on [IgniteWoo.com](http://ignitewoo.com/ " WooCommerce plugins and custom development "). Contacting us directly gets you a faster response, we don't have a lot of time available to check the WordPress support forums. Note that we do publish a support phone number on our Web site, however *phone support is only available for our paid plugins.*
 
 
 = How do I report a bug? =
@@ -241,6 +241,10 @@ Place your language files in the wp-content/languages subdirectory.
 
 
 == Changelog ==
+
+= 2.2.34 = 
+
+Fixed checking for custom style sheet
 
 = 2.2.33 = 
 
