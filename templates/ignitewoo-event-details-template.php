@@ -8,7 +8,7 @@ Copyright (c) 2012 - IgniteWoo.com - All Rights Reserved
 IMPORTANT: This template is designed to work with regular events AND event ticket sales as products in Woocommerce
 
 FIXME: MAYBE MAKE A DIFFERENT TEMPLATE FOR PRODUCTS SO IT CAN BE STYLED DIFFERENTLY
-
+ 
 
 */
 
@@ -17,7 +17,7 @@ if ( !defined( 'ABSPATH' ) )
 
 global $post, $ignitewoo_events, $ignitewoo_events_pro;
 
-$starts = get_post_meta( $post->ID, '_ignitewoo_event_start', false );
+$starts = get_post_meta( $post->ID, '_ignitewoo_event_start', false ); 
 
 asort( $starts );
 
@@ -77,6 +77,7 @@ $cost = get_event_cost();
 					$ignitewoo_events_pro->load_rules();
 
 				$duration = get_post_meta( $post->ID, '_ignitewoo_event_duration', true ); 
+
 			?>
 
 			<tr>
@@ -100,7 +101,7 @@ $cost = get_event_cost();
 			<?php foreach( $starts as $s ) { ?>
 
 			<tr>
-				<?php 
+				<?php
 					if ( method_exists( $ignitewoo_events_pro, 'load_rules' ) )
 						$end_date = date( IgniteWoo_Date_Series_Rules::DATE_FORMAT, strtotime( $s ) + $duration ); 
 					else
@@ -126,6 +127,9 @@ $cost = get_event_cost();
 
 				<td>
 					<meta itemprop="endDate" content="<?php echo ign_event_date_to_iso( $end_date ) ?>">
+					
+					<?php if ( strtotime( $end_date ) > current_time('timestamp' ) ) $style = ''; ?>
+					
 					<span style="<?php echo $style ?>"><?php echo date( $date_format, strtotime( $end_date ) ) ?> <?php _e( 'at', 'ignitewoo_events' ) ?> <?php echo date( $time_format, strtotime( $end_date ) ); ?></span>
 					</meta>
 				</td>

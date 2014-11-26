@@ -73,9 +73,9 @@ class IgniteWoo_Events_Admin {
 	
 	}
 	
-	
+	 
 	function save_post_data( $post_id = '' ) { 
-		global $wpdb, $post;
+		global $wpdb, $post, $typenow;
 
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
 			return;
@@ -95,7 +95,12 @@ class IgniteWoo_Events_Admin {
 		if ( !current_user_can( 'edit_post', $post_id ) ) 
 			return;
 
-		
+		// Clear it out
+		if ( 'ignitewoo_event' == $typenow ) { 
+			delete_post_meta( $post->ID, '_ignitewoo_event_start' );
+			delete_post_meta( $post->ID, '_ignitewoo_event_end' );
+		}
+
 		// Delete post meta if this is not an event post because its existence is relied upon for expiration checking etc
 		if ( !isset( $_POST['_ignitewoo_event'] ) || empty( $_POST['_ignitewoo_event'] ) ) { 
 			delete_post_meta( $post->ID, '_ignitewoo_event' );

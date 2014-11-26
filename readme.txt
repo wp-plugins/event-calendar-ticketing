@@ -3,8 +3,8 @@ Contributors: ignitewoo
 Donate link: http://ignitewoo.com
 Tags: appointments, calendar, class, concert, conference, conference manager,date, dates, event, events,  event calendar, event manager, event google maps, meeting, seminar, summut, ticketing, tickets, woocommerce, woocommerce tickets, wooevents, venue, workshop
 Requires at least: 3.5.1
-Tested up to: 3.9.1
-Stable tag: 2.2.34
+Tested up to: 4.0.1
+Stable tag: 2.2.35
 Copyright: Copyright (c) 2012, 2013 - IgniteWoo.com - ALL RIGHTS RESERVED
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -242,6 +242,12 @@ Place your language files in the wp-content/languages subdirectory.
 
 == Changelog ==
 
+= 2.2.35 = 
+
+Tweaked saving start and end dates for regular non-ticket event postings
+
+Tweaked template for unnecessary strike-through on end dates in the future
+
 = 2.2.34 = 
 
 Fixed checking for custom style sheet
@@ -408,7 +414,9 @@ Tweaked JS code to avoid loading on unnecessary admin pages
 
 == Upgrade Notice ==
 
-Latest release includes tweaks and bug fixes
+= 2.2.35 =
+
+Be sure to install this update and when you're done, IF you have regular non-ticket events posted ( e.g. regular events not posted as products in WooCommerce ) and you experience issues with events whose dates spam different years, then edit your events and simply resave them. 
 
 
 == Support ==
