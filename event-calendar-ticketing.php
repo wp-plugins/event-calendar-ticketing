@@ -4,7 +4,7 @@ Plugin Name: Event Calendar & Ticketing
 Plugin URI: http://ignitewoo.com
 Description: Full featured super-powered event calendar and ticketing management system. 
 Author: IgniteWoo.com
-Version: 2.2.35
+Version: 2.2.36
 Author URI: http://ignitewoo.com
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -619,7 +619,7 @@ class IgniteWoo_Events {
 
 		// Use a start date of 3 months ago - this may need to be changed later. Depends on use cases
 		if ( isset( $_POST['start'] ) ) { 
-			$start = date( 'Y-m-d H:i:s', strtotime( '-3 month', $_POST['start'] ) );
+			$start = date( 'Y-m-d H:i:s', strtotime( '-6 month', $_POST['start'] ) );
 
 		}
 
