@@ -4,7 +4,7 @@ Plugin Name: Event Calendar & Ticketing
 Plugin URI: http://ignitewoo.com
 Description: Full featured super-powered event calendar and ticketing management system. 
 Author: IgniteWoo.com
-Version: 2.2.36
+Version: 2.2.37
 Author URI: http://ignitewoo.com
 License: GNU AGPLv3 
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
@@ -261,8 +261,8 @@ class IgniteWoo_Events {
 	
 	
 	function process_expired( $post_type ) { 
-		global $post, $wpdb;
-		
+		global $post, $wpdb, $ignitewoo_events_pro;
+
 		// Exclude post if someone is editing a post - handle edit redirects too
 		if ( !empty( $_POST['action'] ) && 'editpost' == $_POST['action'] && !empty( $_POST['post_ID'] ) )
 			$exclude = ' and ID not in ('. $_POST['post_ID'] . ')';
@@ -271,7 +271,7 @@ class IgniteWoo_Events {
 			$exclude = ' and ID not in ('. $_GET['post'] . ')';
 		else
 			$exclude = '';
-
+			
 		$sql = 'select ID from ' . $wpdb->posts . ' left join ' . $wpdb->postmeta . ' on post_id = ID 
 			where 
 			( meta_key = "_ignitewoo_event" and meta_value = "yes" )
@@ -301,9 +301,41 @@ class IgniteWoo_Events {
 
 					$end_date = get_post_meta( $r->ID, '_ignitewoo_event_end', true );
 
-					if ( !$end_date || strtotime( $end_date ) > current_time( 'timestamp', false ) )
+					if ( !$end_date || false === strtotime( $end_date ) > current_time( 'timestamp', false ) )
 						continue;
 
+					if ( !empty( $ignitewoo_events_pro ) ) { 
+
+						$attr_dates = null;
+						
+						if ( function_exists( 'wc_get_product' ) )
+							$temp_product = wc_get_product( $r->ID );
+						else 
+							$temp_product = get_product( $r->ID ); 
+
+						$attrs = $temp_product->get_variation_attributes();
+	
+						if ( isset( $attrs['Date'] ) )
+							$attr_dates = $attrs['Date'];
+
+						// Assume the last date is the oldest
+						if ( !empty( $attr_dates ) ) { 
+						
+							$temp_end_date = end( $attr_dates );
+							
+							if ( method_exists( $ignitewoo_events_pro, 'load_rules' ) )
+								$ignitewoo_events_pro->load_rules();
+							
+							$duration = get_post_meta( $r->ID, '_ignitewoo_event_duration', true ); 
+							
+							$temp_end_date = strtotime( $temp_end_date );
+
+							// If the event product has not reached the end date do not adjust post status
+							if ( $temp_end_date <= current_time( 'timestamp', false ) )
+								continue;
+						}
+					}
+					
 					remove_action( 'woocommerce_ignitewoo_event_add_to_cart', 'woocommerce_simple_add_to_cart' );
 
 					$wpdb->update( $wpdb->posts, array( 'post_status' => $this->settings['event_expiration'] ), array( 'ID' => $r->ID ) );

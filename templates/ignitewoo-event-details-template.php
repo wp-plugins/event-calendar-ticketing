@@ -15,7 +15,8 @@ FIXME: MAYBE MAKE A DIFFERENT TEMPLATE FOR PRODUCTS SO IT CAN BE STYLED DIFFEREN
 if ( !defined( 'ABSPATH' ) )
 	die;
 
-global $post, $ignitewoo_events, $ignitewoo_events_pro;
+global $post, $ignitewoo_events, $ignitewoo_events_pro, $product;
+
 
 $starts = get_post_meta( $post->ID, '_ignitewoo_event_start', false ); 
 
@@ -24,6 +25,8 @@ asort( $starts );
 $ends = get_post_meta( $post->ID, '_ignitewoo_event_end', false );
 
 asort( $ends );
+
+$attr_dates = null;
 
 $main_settings = get_option( 'ignitewoo_events_main_settings', false ); 
 
@@ -44,7 +47,7 @@ $cost = get_event_cost();
 	<?php // ============ EVENT DATES ============== ?>
 
 	<?php if ( 'ignitewoo_event' == $post->post_type ) { ?>
-	
+
 		<span class="summary">
 		<?php 
 			// Remove the plugin's own action hook otherwise an infinity loop will result. 
@@ -73,6 +76,14 @@ $cost = get_event_cost();
 		<?php if ( $starts && $ends ) { ?>
 
 			<?php 
+				$data = $ignitewoo_events->get_post_data();
+				
+				if ( isset( $product ) && class_exists( 'WC_Product' ) && 'None' == $data['recurrence']['type'] ) { 
+					$attrs = $product->get_variation_attributes();
+					if ( isset( $attrs['Date'] ) )
+						$attr_dates = $attrs['Date'];
+				}
+				
 				if ( method_exists( $ignitewoo_events_pro, 'load_rules' ) )
 					$ignitewoo_events_pro->load_rules();
 
@@ -98,7 +109,20 @@ $cost = get_event_cost();
 				<?php } ?>
 			</tr>
 
-			<?php foreach( $starts as $s ) { ?>
+			<?php 
+			// If someone is manually setting their own dates in a product
+			if ( isset( $attr_dates ) ) { 
+				
+				$starts = array();
+				
+				foreach( $attr_dates as $ad )
+					$starts[] = $ad; 
+					
+			}
+
+			foreach( $starts as $s ) { 
+					
+			?>
 
 			<tr>
 				<?php
@@ -171,7 +195,7 @@ $cost = get_event_cost();
 			</tr>
 
 			<?php } ?>
-
+			
 		<?php } ?>
 
 
