@@ -78,7 +78,7 @@ $cost = get_event_cost();
 			<?php 
 				$data = $ignitewoo_events->get_post_data();
 				
-				if ( isset( $product ) && class_exists( 'WC_Product' ) && 'None' == $data['recurrence']['type'] ) { 
+				if ( isset( $product ) && class_exists( 'WC_Product' ) && 'None' == $data['recurrence']['type'] && $product->is_type( 'variable' ) ) {  
 					$attrs = $product->get_variation_attributes();
 					if ( isset( $attrs['Date'] ) )
 						$attr_dates = $attrs['Date'];
