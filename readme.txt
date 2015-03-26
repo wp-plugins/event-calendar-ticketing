@@ -242,6 +242,10 @@ Place your language files in the wp-content/languages subdirectory.
 
 == Changelog ==
 
+= 2.2.39 =
+
+Tweaked hook priority
+
 = 2.2.38 =
 
 Tweak WooCommerce product type detection in the event details template

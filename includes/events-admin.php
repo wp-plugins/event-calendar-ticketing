@@ -50,9 +50,9 @@ class IgniteWoo_Events_Admin {
 
 	function init() { 
 
-		add_action( 'save_post', array( &$this, 'save_post_data' ), 99999 ); // DO NOT CHANGE PRIORITY WITHOUT CHANGING remove_action calls
+		add_action( 'save_post', array( &$this, 'save_post_data' ), 5 ); // DO NOT CHANGE PRIORITY WITHOUT CHANGING remove_action calls
 		
-		add_action( 'delete_post', array( &$this, 'delete_post_data' ), 99999 ); // DO NOT CHANGE PRIORITY WITHOUT CHANGING remove_action calls
+		add_action( 'delete_post', array( &$this, 'delete_post_data' ), 5 ); // DO NOT CHANGE PRIORITY WITHOUT CHANGING remove_action calls
 
 
 	}
